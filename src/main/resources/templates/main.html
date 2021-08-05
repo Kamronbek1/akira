@@ -8,8 +8,7 @@
     <div align="center">
         <table>
             <tr th:each="entry : ${hospitals}">
-                <td th:text="${entry.key}"/>
-                <td th:text="${entry.value}"/>
+                <td th:text="${entry}"/>
             </tr>   
         </table>        
     </div>
