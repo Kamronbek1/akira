@@ -6,7 +6,7 @@
 package com.company.akira.controller;
 
 import com.company.akira.model.Hospital;
-import com.company.akira.model.HospitalRepository;
+import com.company.akira.repository.HospitalRepository;
 import com.company.akira.model.Sort;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
