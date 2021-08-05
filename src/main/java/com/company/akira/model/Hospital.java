@@ -6,6 +6,8 @@
 package com.company.akira.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,15 +26,15 @@ public class Hospital {
     private String name;
     private String phone;
     private String adress;
-    private Point location;
+   // private Point location;
+    @Enumerated(EnumType.STRING)
     private Sort sort;
 
-    public Hospital(Integer id, String name, String phone, String adress, Point location, Sort sort) {
-        this.id = id;
+    public Hospital(String name, String phone, String adress/*, Point location*/, Sort sort) {
         this.name = name;
         this.phone = phone;
         this.adress = adress;
-        this.location = location;
+       // this.location = location;
         this.sort = sort;
     }
 
@@ -71,13 +73,13 @@ public class Hospital {
         this.adress = adress;
     }
 
-    public Point getLocation() {
+  /*  public Point getLocation() {
         return location;
     }
 
     public void setLocation(Point location) {
         this.location = location;
-    }
+    }*/
 
     public Sort getSort() {
         return sort;
@@ -89,7 +91,7 @@ public class Hospital {
 
     @Override
     public String toString() {
-        return "ShifoService{" + "id=" + id + ", name=" + name + ", phone=" + phone + ", adress=" + adress + ", location=" + location + ", sort=" + sort + '}';
+        return "ShifoService{" + "id=" + id + ", name=" + name + ", phone=" + phone + ", adress=" + adress + /*", location=" + location + */", sort=" + sort + '}';
     }
 
 }

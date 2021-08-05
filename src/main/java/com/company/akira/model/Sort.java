@@ -9,12 +9,21 @@ package com.company.akira.model;
  *
  * @author User
  */
-enum Sort {
-    EYE,JARROH,LOR;
+public enum Sort {
+    EYE("EYE"), JARROH("JARROH"), LOR("LOR");
+
+    private String name;
+
+    private Sort(String name) {
+        this.name = name;
+    }
+    Sort() {
+
+    }
 
     @Override
     public String toString() {
         return "Sort{" + '}';
     }
-    
+
 }
