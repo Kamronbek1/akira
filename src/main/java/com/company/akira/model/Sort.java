@@ -23,7 +23,7 @@ public enum Sort {
 
     @Override
     public String toString() {
-        return "Sort{" + '}';
+        return name;
     }
 
 }
