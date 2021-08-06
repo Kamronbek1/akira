@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class AkiraHelloController {
     
-    @GetMapping("/")
+    @GetMapping("/input")
     public String index(){
         return "input_form";
     }

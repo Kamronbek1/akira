@@ -4,56 +4,34 @@
     <title>Akira</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/input.css">
 </head>
 <body>
-<style type="text/css">
-    label {
-        display: inline-block;
-        width: 100px;
-        margin: 5px;
-        margin-right: 7%;
-        text-align: left;
-    }
 
-    textarea[type=text], select {
-        display: inline-block;
-        width: 200px;
-    }
-
-    input[type=checkbox] {
-        margin-left: 10px;
-    }
-
-    button {
-        padding: 5px;
-        margin: 10px;
-    }
-</style>
 <div align="center">
-    <h1>User Registration</h1>
-    <form action="#" th:action="@{/add}" method="post" th:object="${hospital}">
-        <label>Name:</label><br>
-        <textarea rows="2" cols="25" th:field="*{name}"></textarea><br/>
+    <h1>Shifoxona
+    </h1>
+    <form action="#" th:action="@{/add}" method="post" th:object="${hospital}" class="formstyle">
+        <label class="labeltext">Name:</label>
+        <textarea rows="2" cols="25" th:field="*{name}" class="formstyle"></textarea><br>
 
-        <label>Phone number:</label>
-        <br>
-        <textarea rows="2" cols="25" th:field="*{phone}"></textarea><br/>
+        <label class="labeltext">Phone number:</label>
+        
+        <textarea rows="2" cols="25" th:field="*{phone}" class="formstyle"></textarea><br>
 
-        <label>Address</label>
-        <br>
-        <textarea rows="2" cols="25" th:field="*{adress}"></textarea><br/>
+        <label class="labeltext">Address</label>
+        
+        <textarea rows="2" cols="25" th:field="*{adress}" class="formstyle"></textarea>
 
         <!--<label>Location</label>
         <input type="text" th:field="*{x}" /><br/>
         <input type="text" th:field="*{y}" /><br/>-->
-        <input type="file" th:type="s">
-        <label>Yo'nalishlari</label><br>
-        <input type="checkbox" th:field="*{sort}" name="sort" value="LOR"/>Lor
-        <input type="checkbox" th:field="*{sort}" name="sort" value="JARROH"/>Jarroh
-        <input type="checkbox" th:field="*{sort}" name="sort" value="EYE"/>Ko'z
-        <!-- <select th:field="*{sort}">
-             <option th:each="p : ${types}" th:value="${p}" th:text="${p}" />
-         </select>-->
+
+  
+       <!-- <select th:field="*{sort}">
+            <option th:each="p : ${types}" th:value="${p}" th:text="${p}" />
+        </select>-->
+
 
 
         <!-- <label>Service type:</label>
@@ -61,9 +39,35 @@
              <option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
          </select>-->
         <br/>
-
+        <div id="list1" class="dropdown-check-list" tabindex="100">
+            <span class="anchor">yonalishni tanlang</span>
+            <ul class="items">
+              <li><input type="checkbox" th:field="*{sort}"name="sort"value="LOR" />Lor</li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="JARROH"/>Jarroh              </li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="EYE"/>Ko'z              </li>
+              <li><input type="checkbox" th:field="*{sort}"name="sort"value="LOR" />Lor</li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="JARROH"/>owqozon              </li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="EYE"/>quloq              </li>
+              <li><input type="checkbox" th:field="*{sort}"name="sort"value="LOR" />tish</li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="JARROH"/>burun              </li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="EYE"/>teri kasalliklari              </li>
+              <li><input type="checkbox" th:field="*{sort}"name="sort"value="LOR" />yurak</li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="JARROH"/>jigar              </li>
+              <li>        <input type="checkbox" th:field="*{sort}"name="sort" value="EYE"/>o`pka             </li>
+             
+            </ul>
+          </div><input id="uploadInput" type="file" name="myFiles" onchange="updateSize();" multiple> selected files: <span id="fileNum">0</span>; total size: <span id="fileSize">0</span>
         <button type="submit">Register</button>
     </form>
 </div>
+<script>
+    var checkList = document.getElementById('list1');
+checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+  if (checkList.classList.contains('visible'))
+    checkList.classList.remove('visible');
+  else
+    checkList.classList.add('visible');
+}
+</script>
 </body>
 </html>
