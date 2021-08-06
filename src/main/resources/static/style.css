@@ -1,0 +1,225 @@
+.mydiv * {
+    color: transparent;
+    background-color: transparent;
+}
+
+.mydiv {
+    height: 10vw;
+
+}
+
+.mydiv:hover {
+    height: 100%;
+}
+
+.mydiv:hover #myUL {
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mydiv:hover #myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+.mydiv:hover #myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+
+body {
+    background-color: green;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.banner {
+    box-sizing: border-box;
+    background-color: #691c2e;
+    text-align: center;
+    width: 60vw;
+    height: 35vw;
+    margin: auto;
+    padding-top: 10vw;
+    border-radius: 10vw;
+}
+
+
+.manzil {
+
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    border: 2px solid gray;
+    background-color: wheat;
+}
+
+.uslub1 {
+    text-align: center;
+    width: 100%;
+    font-size: 5vw;
+
+}
+
+.linkTo:hover {
+    color: white;
+    background-color: black;
+}
+
+.uslub {
+    text-align: center;
+    background-color: red;
+    width: 100%;
+    font-size: 5vw;
+}
+
+img {
+    width: 27vw;
+    height: 27vw;
+    border-radius: 25%;
+}
+
+.content {
+    margin: auto;
+    padding-left: 2vw;
+    float: left;
+    display: block;
+    width: 27vw;
+    height: 29vw;
+    padding-top: 20px;
+}
+
+.VName {
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 0;
+    font-size: 2vw;
+}
+
+.clr {
+    clear: both;
+}
+
+.sub {
+    width: 100%;
+    text-align: center;
+    background-color: seagreen;
+    font-size: 3vw;
+}
+
+.linkTo {
+    margin: 1px;
+    font-size: 2.5vw;
+    width: 16vw;
+    height: 4vw;
+    float: left;
+    box-sizing: border-box;
+    background-color: cadetblue;
+    text-decoration: none;
+    border-radius: 35%;
+}
+
+.headerMed {
+    margin: 2vw auto;
+    width: 75vw;
+    background-color: crimson;
+    font-size: 4vw;
+    border-radius: 3vw;
+    padding-left: 3vw;
+}
+
+.logo {
+    float: left;
+    width: 15vw;
+    height: 15vw;
+    border: 0.5vw solid black;
+    margin-right: 10px;
+}
+
+.logo:hover {
+    transition: 0.5s;
+    float: left;
+    width: 18vw;
+    height: 18vw;
+}
+
+.content2 {
+    margin-top: 1.5vw;
+}
+
+.button {
+    box-sizing: border-box;
+    background-color: darkgoldenrod;
+    text-decoration: none;
+    color: black;
+
+    width: 17vw;
+    height: 4.5vw;
+    font-size: 1.6vw;
+    border-radius: 25px;
+    margin-bottom: 1vw;
+}
+
+.button:hover {
+    background-color: black;
+    color: wheat;
+}
+
+.content2 {
+    display: block;
+    box-sizing: border-box;
+}
+
+.name1 {
+    padding: 0;
+    margin: 0;
+    font-size: 2.4vw;
+}
+
+.aside {
+    border-radius: 5vw;
+    margin-left: 6vw;
+    padding: 1vw;
+    float: left;
+    background-color: thistle;
+    border: 1vw solid grey;
+    box-sizing: content-box;
+    display: block;
+    height: 15vw;
+    width: 80vw;
+}
+
+.tel {
+    background-color: yellow;
+    font-size: 2vw;
+    padding: 0;
+    margin-bottom: 2vw;
+}
+
+.openAll {
+    background-color: darkgoldenrod;
+    text-decoration: none;
+    color: black;
+    width: 40vw;
+    height: 4.5vw;
+    font-size: 2vw;
+    font-style: bold;
+    border-radius: 25px;
+    margin-left: 30vw;
+    margin-top: 1.5vw;
+}
+
+.openAll:hover {
+    background-color: black;
+    color: wheat;
+}

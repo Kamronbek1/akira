@@ -18,6 +18,10 @@ public enum Sort {
         this.name = name;
     }
     Sort() {
+     /*1lor
+     2ko'z
+    1lor,koz
+    */
 
     }
 

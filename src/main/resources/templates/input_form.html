@@ -6,26 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<style type="text/css">
+    label {
+        display: inline-block;
+        width: 100px;
+        margin: 5px;
+        margin-right: 7%;
+        text-align: left;
+    }
+
+    textarea[type=text], select {
+        display: inline-block;
+        width: 200px;
+    }
+
+    input[type=checkbox] {
+        margin-left: 10px;
+    }
+
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
 <div align="center">
     <h1>User Registration</h1>
     <form action="#" th:action="@{/add}" method="post" th:object="${hospital}">
-        <label>Full name:</label>
+        <label>Name:</label><br>
         <textarea rows="2" cols="25" th:field="*{name}"></textarea><br/>
 
         <label>Phone number:</label>
+        <br>
         <textarea rows="2" cols="25" th:field="*{phone}"></textarea><br/>
 
         <label>Address</label>
+        <br>
         <textarea rows="2" cols="25" th:field="*{adress}"></textarea><br/>
 
         <!--<label>Location</label>
         <input type="text" th:field="*{x}" /><br/>
         <input type="text" th:field="*{y}" /><br/>-->
+        <input type="file" th:type="s">
+        <label>Yo'nalishlari</label><br>
+        <input type="checkbox" th:field="*{sort}" name="sort" value="LOR"/>Lor
+        <input type="checkbox" th:field="*{sort}" name="sort" value="JARROH"/>Jarroh
+        <input type="checkbox" th:field="*{sort}" name="sort" value="EYE"/>Ko'z
+        <!-- <select th:field="*{sort}">
+             <option th:each="p : ${types}" th:value="${p}" th:text="${p}" />
+         </select>-->
 
-        <label>Gender:</label>
-        <input type="checkbox" th:field="*{sort}" value="Lor"/>Male
-        <input type="checkbox" th:field="*{sort}" value="Jarroh"/>Female<br/>
-        <input type="checkbox" th:field="*{sort}" value="Ko'z"/>Female<br/>
 
         <!-- <label>Service type:</label>
          <select th:field="*{profession}">

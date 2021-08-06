@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="banner">
+    <h1 class="uslub1">Almashib turuvchi reklama banneri</h1>
+</div>
+<!--1-->
+<a href="https://yandex.uz/maps/10335/tashkent/?from=api-maps&ll=69.256210%2C41.306224&origin=jsapi_2_1_78&pt=69.2673%2C41.3324~69.2402%2C41.2173~69.1777%2C41.3005~69.3592%2C41.3558~69.3571%2C41.3548~69.2873%2C41.3477~69.2871%2C41.3631~69.259%2C41.2979~69.2566%2C41.3393~69.2727%2C41.2868&z=12">
+    <button class="openAll">Barchasini Xaritada ko`rsatish</button></a>
+<div class="content2" id="dShF">
+
+    <div th:each="hos :${hospitals}" class="aside">
+        <h3 class="name1">th:text="${hos.getName()}"</h3>
+        <p ><span th:text="${hos.getPhone()}"  class="tel">
+        <p ><span th:text="${hos.getSort()}"  class="tel">
+           </span><br>
+            <a href="https://clinics.uz/uzb/catalog/medical-centers/doktor-shahnoza-fayz">
+                <button class="button">Batafsil ma`lumot</button></a>
+            <a href="https://yandex.uz/maps/10335/tashkent/?from=api-maps&ll=69.259129%2C41.297868&mode=routes&origin=jsapi_2_1_78&rtext=~41.297900%2C69.259000&rtt=pd&ruri=~&z=15">
+                <button class="button">Xaritada ko`rsatish</button></a>
+        </p>
+    </div>
+</div>
+<div class="clr"></div>
+</body>
+</html>

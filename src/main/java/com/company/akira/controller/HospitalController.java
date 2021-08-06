@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author User
  */
@@ -32,15 +36,21 @@ public class HospitalController {
         }*/
         Iterable<Hospital> hospitals = hospitalRepo.findAll();
         model.addAttribute("hospitals", hospitals);
-        return "main";
+        return "index";
     }
 
     @GetMapping("/add")
     public String showForm(Model model) {
         Hospital hospital = new Hospital();
         model.addAttribute("hospital", hospital);
-        return "";
+        List<Sort> types = Arrays.asList(Sort.values());
+        for (Sort type : types) {
+            System.out.println(type);
+        }
+        model.addAttribute("types", types);
+        return "input_form";
     }
+
     @PostMapping("/add")
     public String submitForm(@ModelAttribute("hospital") Hospital hospital) {
         System.out.println(hospital);
