@@ -12,13 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
- *
  * @author User
  */
 @Controller
-public class HospialController {
+public class HospitalController {
 
     @Autowired
     private HospitalRepository hospitalRepo;
@@ -33,11 +34,17 @@ public class HospialController {
         model.addAttribute("hospitals", hospitals);
         return "main";
     }
+
     @GetMapping("/add")
-    public String showForm(Model model){
+    public String showForm(Model model) {
         Hospital hospital = new Hospital();
         model.addAttribute("hospital", hospital);
         return "";
     }
-
+    @PostMapping("/add")
+    public String submitForm(@ModelAttribute("hospital") Hospital hospital) {
+        System.out.println(hospital);
+        hospitalRepo.save(hospital);
+        return "input_form";
+    }
 }

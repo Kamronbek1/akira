@@ -1,45 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Akira</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-       <div align="center">
+<head>
+    <title>Akira</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div align="center">
     <h1>User Registration</h1>
     <form action="#" th:action="@{/add}" method="post" th:object="${hospital}">
         <label>Full name:</label>
-        <input type="text" th:field="*{name}" /><br/>
- 
+        <textarea rows="2" cols="25" th:field="*{name}"></textarea><br/>
+
         <label>Phone number:</label>
-        <input type="text" th:field="*{phone}" /><br/>
- 
+        <textarea rows="2" cols="25" th:field="*{phone}"></textarea><br/>
+
         <label>Address</label>
-        <input type="text" th:field="*{password}" /><br/>
- 
-        <label>Birthday (yyyy-mm-dd):</label>
-        <input type="text" th:field="*{birthday}" /><br/>
- 
+        <textarea rows="2" cols="25" th:field="*{adress}"></textarea><br/>
+
+        <!--<label>Location</label>
+        <input type="text" th:field="*{x}" /><br/>
+        <input type="text" th:field="*{y}" /><br/>-->
+
         <label>Gender:</label>
-        <input type="radio" th:field="*{gender}" value="Male" />Male
-        <input type="radio" th:field="*{gender}" value="Female" />Female<br/>
- 
-        <label>Profession:</label>
-        <select th:field="*{profession}">
-            <option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
-        </select>
+        <input type="checkbox" th:field="*{sort}" value="Lor"/>Male
+        <input type="checkbox" th:field="*{sort}" value="Jarroh"/>Female<br/>
+        <input type="checkbox" th:field="*{sort}" value="Ko'z"/>Female<br/>
+
+        <!-- <label>Service type:</label>
+         <select th:field="*{profession}">
+             <option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
+         </select>-->
         <br/>
- 
-        <label>Married?</label>
-        <input type="checkbox" th:field="*{married}" /><br/>
- 
-        <label>Note:</label>
-        <textarea rows="5" cols="25" th:field="*{note}"></textarea>
-        <br/>
- 
-        <button type="submit">Register</button>    
+
+        <button type="submit">Register</button>
     </form>
 </div>
-    </body>
+</body>
 </html>
