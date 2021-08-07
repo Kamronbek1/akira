@@ -6,7 +6,6 @@
 package com.company.akira.repository;
 
 import com.company.akira.model.Hospital;
-import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 
 /**
