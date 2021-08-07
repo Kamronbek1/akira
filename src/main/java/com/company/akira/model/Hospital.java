@@ -26,16 +26,18 @@ public class Hospital {
     private String name;
     private String phone;
     private String adress;
+    private String imageUrl;
    // private Point location;
     @Enumerated(EnumType.STRING)
     private Sort sort;
 
-    public Hospital(String name, String phone, String adress/*, Point location*/, Sort sort) {
+    public Hospital(String name, String phone, String adress/*, Point location*/, Sort sort,String imageUrl) {
         this.name = name;
         this.phone = phone;
         this.adress = adress;
        // this.location = location;
         this.sort = sort;
+        this.imageUrl = imageUrl;
     }
 
     public Hospital() {
@@ -89,9 +91,24 @@ public class Hospital {
         this.sort = sort;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     @Override
     public String toString() {
-        return "ShifoService{" + "id=" + id + ", name=" + name + ", phone=" + phone + ", adress=" + adress + /*", location=" + location + */", sort=" + sort + '}';
+        return "Hospital{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", adress='" + adress + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", sort=" + sort +
+                '}';
     }
 
 }

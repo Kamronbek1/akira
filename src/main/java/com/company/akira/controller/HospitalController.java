@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class HospitalController {
         }*/
         Iterable<Hospital> hospitals = hospitalRepo.findAll();
         model.addAttribute("hospitals", hospitals);
-        return "index";
+        return "preview";
     }
 
     @GetMapping("/add")
@@ -51,7 +50,7 @@ public class HospitalController {
         return "input_form";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addHospital")
     public String submitForm(@ModelAttribute("hospital") Hospital hospital) {
         System.out.println(hospital);
         hospitalRepo.save(hospital);

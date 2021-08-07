@@ -13,6 +13,7 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author User
  */
+
 public interface HospitalRepository extends CrudRepository<Hospital, Long>{
 
 
