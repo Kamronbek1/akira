@@ -18,7 +18,7 @@ public class UploadController {
     //Save the uploaded file to this folder
     private static String UPLOADED_FOLDER = "D:\\server\\photo\\";
 
-    @GetMapping("/")
+    @GetMapping("/up")
     public String index() {
         return "upload";
     }

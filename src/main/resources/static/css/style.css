@@ -1,0 +1,39 @@
+.content{
+float: left;
+margin: 15px;
+
+}
+body{
+    background-color: gray;
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+a {
+    text-decoration: none;
+    color:rgb(245, 239, 239);
+}
+.container{
+    box-sizing: border-box;
+    margin: auto;
+    padding: auto;
+    width: 85%;
+}
+.catName{
+    color: rgb(245, 239, 239);
+    font-size: 20px;
+    text-align: center;
+}
+input {
+    border-radius: 20px;;
+    width: 25px;
+    height: 20px;
+    float: left;
+    background-color: grey;
+    
+}
+
+

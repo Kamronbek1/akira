@@ -11,10 +11,7 @@ import com.company.akira.repository.HospitalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -30,10 +27,11 @@ import java.util.List;
  * @author User
  */
 @Controller
-public class HospitalUprloadController {
+@RequestMapping("/html")
+public class HospitalUploadController {
 
 
-    private static String UPLOADED_FOLDER = "/static/assets/images/";
+    private static String UPLOADED_FOLDER = "D:\\server\\photo\\";
 
     @Autowired
     private HospitalRepository hospitalRepo;
@@ -73,8 +71,9 @@ public class HospitalUprloadController {
         try {
             // Get the file and save it somewhere
             byte[] bytes = file.getBytes();
-            File pathU = new File("./static/image/");
-            Path path = Paths.get(new File("src\\main\\resources\\static\\uploads").getAbsolutePath() + "\\"+ file.getOriginalFilename());
+
+            Path path = Paths.get(UPLOADED_FOLDER+ file.getOriginalFilename());
+            hospital.setImageUrl(path.toUri().toString());
             Files.write(path, bytes);
             System.out.println(path);
 
