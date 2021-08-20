@@ -4,7 +4,7 @@ import com.company.akira.model.Role;
 import com.company.akira.model.User;
 import com.company.akira.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/html/")
-@PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
     @Autowired
     private UserRepository userRepo;
