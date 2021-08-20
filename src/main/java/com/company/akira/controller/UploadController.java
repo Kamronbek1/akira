@@ -12,9 +12,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-@Controller
+//@Controller
 public class UploadController {
-
+/*
     //Save the uploaded file to this folder
     private static String UPLOADED_FOLDER = "D:\\server\\photo\\";
 
@@ -52,6 +52,6 @@ public class UploadController {
     @GetMapping("/uploadStatus")
     public String uploadStatus() {
         return "uploadStatus";
-    }
+    }*/
 
 }

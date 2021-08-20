@@ -21,18 +21,18 @@ import java.util.List;
 /**
  * @author User
  */
-@Controller
+//@Controller
 public class HospitalController {
 
-    @Autowired
+  /*  @Autowired
     private HospitalRepository hospitalRepo;
 
     @GetMapping("/hospitals")
     public String getAll(Model model) {
-        /*for (int i = 0; i < 10; i++) {
+        *//*for (int i = 0; i < 10; i++) {
             Hospital save = hospitalRepo.save(new Hospital("Shaxnoza"+i, "9999", "chilonzor", Sort.JARROH));
             System.out.println(save);
-        }*/
+        }*//*
         Iterable<Hospital> hospitals = hospitalRepo.findAll();
         model.addAttribute("hospitals", hospitals);
         return "preview";
@@ -55,5 +55,5 @@ public class HospitalController {
         System.out.println(hospital);
         hospitalRepo.save(hospital);
         return "input_form";
-    }
+    }*/
 }
