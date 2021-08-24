@@ -12,8 +12,10 @@ public class MvcConfig implements WebMvcConfigurer {
     private String uploadPath;
 
     public void addViewControllers(ViewControllerRegistry registry) {
+        /*
         registry.addViewController("/login");
         registry.addViewController("/form");
+        */
     }
 
     @Override
@@ -22,9 +24,11 @@ public class MvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("file://" + uploadPath + "/");
         registry.addResourceHandler("/static/**")
                 .addResourceLocations("classpath:/static/");
-        registry.addResourceHandler("/css/**", "/html/**")
-                .addResourceLocations("classpath:/static/");
-        /*registry.addResourceHandler("/html/**")
+        registry.addResourceHandler("/css/**")
+                .addResourceLocations("classpath:/static/");/*
+        registry.addResourceHandler("/templates/**")
+                .addResourceLocations("classpath:/templates/");
+        registry.addResourceHandler("/catalog/**")
                 .addResourceLocations("classpath:/templates/");*/
     }
 }

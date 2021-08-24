@@ -27,7 +27,7 @@ import java.util.List;
  * @author User
  */
 @Controller
-@RequestMapping("/html")
+@RequestMapping("/catalog")
 public class HospitalUploadController {
 
 
