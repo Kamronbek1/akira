@@ -36,7 +36,7 @@ public class HospitalUploadController {
     @Autowired
     private HospitalRepository hospitalRepo;
 
-    @GetMapping("/hospitals0")
+    @GetMapping("/hospitals")
     public String getAll(Model model) {
         /*for (int i = 0; i < 10; i++) {
             Hospital save = hospitalRepo.save(new Hospital("Shaxnoza"+i, "9999", "chilonzor", Sort.JARROH));
@@ -47,7 +47,7 @@ public class HospitalUploadController {
         return "preview";
     }
 
-    @GetMapping("/add0")
+    @GetMapping("/add")
     public String showForm(Model model) {
         Hospital hospital = new Hospital();
         model.addAttribute("hospital", hospital);
@@ -59,7 +59,7 @@ public class HospitalUploadController {
         return "input_form";
     }
 
-    @PostMapping("/addHospital0")
+    @PostMapping("/addHospital")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
                              @ModelAttribute("hospital") Hospital hospital) {
