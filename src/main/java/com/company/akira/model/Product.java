@@ -1,10 +1,12 @@
 package com.company.akira.model;
 
-import javax.persistence.*;
-import java.util.Arrays;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Product<T> {
+public class Product{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,19 +14,18 @@ public class Product<T> {
     private String name;
     private String imageUrl;
     private String phone;
+    private String address;
     private String mapUrl;
-    private String[] categories;
 
     public Product() {
     }
 
-    public Product(int id, String name, String imageUrl, String phone, String mapUrl, String... categories) {
-        this.id = id;
+    public Product(String name, String imageUrl, String phone,String address, String mapUrl) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.phone = phone;
+        this.address = address;
         this.mapUrl = mapUrl;
-        this.categories = categories;
     }
 
     public int getId() {
@@ -59,20 +60,20 @@ public class Product<T> {
         this.phone = phone;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getMapUrl() {
         return mapUrl;
     }
 
     public void setMapUrl(String mapUrl) {
         this.mapUrl = mapUrl;
-    }
-
-    public String[] getCategories() {
-        return categories;
-    }
-
-    public void setCategories(String... categories) {
-        this.categories = categories;
     }
 
     @Override
@@ -82,8 +83,7 @@ public class Product<T> {
                 ", name='" + name + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", phone='" + phone + '\'' +
-                ", mapUrl='" + mapUrl + '\'' +
-                ", categories=" + Arrays.toString(categories) +
+                ", mapUrl='" + mapUrl + '\''+
                 '}';
     }
 }
