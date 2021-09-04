@@ -5,98 +5,58 @@
  */
 package com.company.akira.model;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
- *
  * @author User
  */
 @Entity
-public class Hospital {
+public class Hospital extends Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hos_gen")
+    @SequenceGenerator(name = "hos_gen", sequenceName = "hos_seq", allocationSize = 1)
+    private Long id;
 
-    private String name;
-    private String phone;
-    private String adress;
-    private String imageUrl;
-   // private Point location;
+    private String address;
+
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "hos_sort", joinColumns = @JoinColumn(name = "hos_id"))
     @Enumerated(EnumType.STRING)
-    private Sort sort;
+    private Set<Sort> sort;
 
-    public Hospital(String name, String phone, String adress/*, Point location*/, Sort sort,String imageUrl) {
-        this.name = name;
-        this.phone = phone;
-        this.adress = adress;
-       // this.location = location;
+    public Hospital(String name, String phone, String address, Set<Sort> sort, String imageUrl) {
+        super(name, phone, imageUrl);
+        this.address = address;
         this.sort = sort;
-        this.imageUrl = imageUrl;
     }
 
     public Hospital() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getAddress() {
+        return address;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
-
-  /*  public Point getLocation() {
-        return location;
-    }
-
-    public void setLocation(Point location) {
-        this.location = location;
-    }*/
-
-    public Sort getSort() {
+    public Set<Sort> getSort() {
         return sort;
     }
 
-    public void setSort(Sort sort) {
+    public void setSort(Set<Sort> sort) {
         this.sort = sort;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     @Override
@@ -105,7 +65,7 @@ public class Hospital {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
-                ", adress='" + adress + '\'' +
+                ", address='" + address + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", sort=" + sort +
                 '}';
