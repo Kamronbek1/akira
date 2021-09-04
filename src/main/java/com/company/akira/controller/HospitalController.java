@@ -38,7 +38,7 @@ public class HospitalController {
         return "preview";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/post")
     public String showForm(Model model) {
         Hospital hospital = new Hospital();
         model.addAttribute("hospital", hospital);

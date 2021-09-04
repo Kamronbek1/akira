@@ -9,10 +9,11 @@ import com.company.akira.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/catalog")
 public class AkiraHomeController {
 
     @Autowired
@@ -27,5 +28,10 @@ public class AkiraHomeController {
         user.setRoles(Collections.singleton(Role.ADMIN));
         userRepo.save(user);*/
         return "index";
+    }
+
+    @GetMapping("/{link}")
+    public String link(@PathVariable("link") String link) {
+        return String.format("/catalog/card/cards_%s", link);
     }
 }
