@@ -13,15 +13,15 @@ import java.util.Set;
  */
 @Entity
 public class Hospital extends Category {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hos_gen")
     @SequenceGenerator(name = "hos_gen", sequenceName = "hos_seq", allocationSize = 1)
     private Long id;
 
     private String address;
+    private String mapUrl;
 
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @ElementCollection(targetClass = Sort.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "hos_sort", joinColumns = @JoinColumn(name = "hos_id"))
     @Enumerated(EnumType.STRING)
     private Set<Sort> sort;
@@ -59,6 +59,14 @@ public class Hospital extends Category {
         this.sort = sort;
     }
 
+    public String getMapUrl() {
+        return mapUrl;
+    }
+
+    public void setMapUrl(String mapUrl) {
+        this.mapUrl = mapUrl;
+    }
+
     @Override
     public String toString() {
         return "Hospital{" +
@@ -67,6 +75,7 @@ public class Hospital extends Category {
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", mapUrl='" + mapUrl + '\'' +
                 ", sort=" + sort +
                 '}';
     }

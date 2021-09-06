@@ -8,6 +8,9 @@ public class Sanatorium extends Category {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sanatorium_gen")
     @SequenceGenerator(name = "sanatorium_gen", sequenceName = "sanatorium_seq", allocationSize = 1)
     private Long id;
+
+    private String address;
+    private String mapUrl;
     public Sanatorium() {
     }
 
@@ -23,13 +26,31 @@ public class Sanatorium extends Category {
         this.id = id;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMapUrl() {
+        return mapUrl;
+    }
+
+    public void setMapUrl(String mapUrl) {
+        this.mapUrl = mapUrl;
+    }
+
     @Override
     public String toString() {
-        return "AutoService{" +
+        return "Sanatorium{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", address='" + address + '\'' +
+                ", mapUrl='" + mapUrl + '\'' +
                 '}';
     }
 }

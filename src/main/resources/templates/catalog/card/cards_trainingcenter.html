@@ -13,18 +13,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<body  style=" background-image: url(/static/images/fon.jpg);">
+<body>
 <div class="container">
     <br>
-    <h1 class="text-center" style="background-color:#7952b3 ;">Avto salon</h1>
+    <h1 class="text-center" style="background-color:#7952b3 ;">Uchebniy-centr</h1>
     <div class="row">
         <div class="col-md-12">
             <button type="button" class="btn btn-primary"><a href="/home" style="text-decoration: none;color: #fff;">Bosh
                 sahifa</a></button>
             <button type="button" class="btn btn-secondary">Katalog</button>
-            <button type="button" class="btn btn-primary"><a href="/catalog/avtosalon/all" style="text-decoration: none;color: #fff;">Avto salon</a>
-            </button>
-            <a href="/add/autosalon">
+            <button type="button" class="btn btn-primary"><a href="/catalog/oquv-markaz/all"
+                                                             style="text-decoration: none;color: #fff;">O'quv
+                markazlar</a></button>
+            <a href="/add/uchebniy">
                 <svg style="position: absolute; top:0px; right:0px;margin-right:4vw; width:30px; height:30px;"
                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                      class="bi bi-cloud-plus-fill" viewBox="0 0 16 16">
@@ -33,31 +34,30 @@
             </a>
         </div>
     </div>
-
-
-    <div th:each="item :${avtomoyka}" class="card"
-         style="width: 96vw;margin: 2vw; padding: 1vw; background-color: whitesmoke;">
-        <img style="border-radius:3px solid red;" class="card-img-top" th:src="${item.getImageUrl()}"
+    <div th:each="product :${oquv}" class="card"
+         style="width: 96vw;margin: 2vw; padding: 1vw; background-color: whitesmoke; background-image: url(../static/images/fon.jpg);">
+        <img style="border-radius:3px solid red;" class="card-img-top" th:src="${product.getImageUrl()}"
              alt=" Card image cap">
         <div class="card-body">
-            <div class="p-3 mb-2 bg-primary text-white" th:text="${item.getName()}"
+            <div class="p-3 mb-2 bg-primary text-white" th:text="${product.getName()}"
                  style="margin:-10px;margin-top: 5px;"><p>Nomi</p>
             </div>
             <div class="p-3 mb-2 bg-primary text-white"
-                 style="margin:-10px;margin-top: 5px;">Tel:<a th:href="'tel:'+${item.getPhone()}"
-                                                              th:text="${item.getPhone()}"></a>
+                 style="margin:-10px;margin-top: 5px;">Tel:<a th:href="'tel:'+${product.getPhone()}"
+                                                              th:text="${product.getPhone()}"></a>
             </div>
-            <div class="p-3 mb-2 bg-primary text-white" th:text="${item.getAddress()}"
+            <div class="p-3 mb-2 bg-primary text-white" th:text="${product.getAddress()}"
                  style="margin:-10px;margin-top: 5px;">Manzil:
             </div>
-            <!--<div class="p-3 mb-2 bg-primary text-white" style="margin:-10px;margin-top: 5px;">Yo'nalishlar</div>
-            <div th:each="category :${item.getCategories()}">
+            <div class="p-3 mb-2 bg-primary text-white" style="margin:-10px;margin-top: 5px;">Yo'nalishlar</div>
+            <div th:each="category :${product.getCategories()}">
                 <a href="#">
-                    <div class="p-3 mb-2 bg-danger text-white" style="margin:-10px;margin-top: 5px;" th:text="${category}">
+                    <div class="p-3 mb-2 bg-danger text-white" style="margin:-10px;margin-top: 5px;"
+                         th:text="${category}">
                         #
                     </div>
                 </a>
-            </div>-->
+            </div>
             <div class="dropup">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"
                         style="width: 100%; background-color: silver;margin-top: 25px; ">
@@ -66,7 +66,7 @@
 
                     <li role="presentation">
                         <div style="position:relative;overflow:hidden; margin-left:0; width: 100%; height: 30vh;">
-                            <iframe th:src="${item.getMapUrl()}" name="myframe" frameborder="1"
+                            <iframe th:src="${product.getMapUrl()}" name="myframe" frameborder="1"
                                     allowfullscreen="true"
                                     style="position:relative; margin-left:0; width: 100%; height: 30vh;  "></iframe>
                         </div>

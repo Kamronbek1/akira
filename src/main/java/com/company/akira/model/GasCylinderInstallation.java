@@ -3,20 +3,22 @@ package com.company.akira.model;
 import javax.persistence.*;
 
 @Entity
-public class GroceryStore extends Category {
+public class GasCylinderInstallation extends Category {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gs_gen")
-    @SequenceGenerator(name = "gs_gen", sequenceName = "gs_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gci_gen")
+    @SequenceGenerator(name = "gci_gen", sequenceName = "gci_seq", allocationSize = 1)
     private Long id;
 
     private String address;
     private String mapUrl;
-    public GroceryStore() {
+    public GasCylinderInstallation() {
     }
 
-    public GroceryStore(String name, String phone, String imageUrl) {
+    public GasCylinderInstallation(String name, String phone, String imageUrl) {
         super(name, phone, imageUrl);
     }
+
     public Long getId() {
         return id;
     }
@@ -43,7 +45,7 @@ public class GroceryStore extends Category {
 
     @Override
     public String toString() {
-        return "GroceryStore{" +
+        return "GasCylinderInstallation{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +

@@ -13,13 +13,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/catalog")
+//@RequestMapping("/catalog0")
 public class AkiraHomeController {
 
-    @Autowired
-    UserRepository userRepo;
+    private final UserRepository userRepo;
 
-    @GetMapping("/")
+    public AkiraHomeController(UserRepository userRepo) {
+        this.userRepo = userRepo;
+    }
+
+    @GetMapping("/home")
     public String index() {
         /*User user = new User();
         user.setUsername("admin");

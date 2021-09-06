@@ -8,6 +8,9 @@ public class Refueling extends Category {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "refueling_gen")
     @SequenceGenerator(name = "refueling_gen", sequenceName = "refueling_seq", allocationSize = 1)
     private Long id;
+
+    private String address;
+    private String mapUrl;
     public Refueling() {
     }
 
@@ -21,6 +24,22 @@ public class Refueling extends Category {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMapUrl() {
+        return mapUrl;
+    }
+
+    public void setMapUrl(String mapUrl) {
+        this.mapUrl = mapUrl;
     }
 
     @Override

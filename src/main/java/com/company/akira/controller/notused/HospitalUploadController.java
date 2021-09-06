@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.company.akira.controller;
+package com.company.akira.controller.notused;
 
 import com.company.akira.model.Hospital;
 import com.company.akira.model.Sort;

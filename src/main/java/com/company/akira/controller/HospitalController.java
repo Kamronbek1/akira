@@ -5,6 +5,7 @@
  */
 package com.company.akira.controller;
 
+import com.company.akira.model.Actor;
 import com.company.akira.model.Hospital;
 import com.company.akira.repository.HospitalRepository;
 import com.company.akira.model.Sort;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,13 +23,23 @@ import java.util.List;
 /**
  * @author User
  */
-//@Controller
+@Controller
+@RequestMapping("/catalog/medical")
 public class HospitalController {
 
-  /*  @Autowired
-    private HospitalRepository hospitalRepo;
+    private final HospitalRepository repo;
 
-    @GetMapping("/hospitals")
+    public HospitalController(HospitalRepository hospitalRepo) {
+        this.repo = hospitalRepo;
+    }
+
+    @GetMapping("/all")
+    public String showAll(Model model) {
+        Iterable<Hospital> all = repo.findAll();
+        model.addAttribute("hospital", all);
+        return "/catalog/card/cards_medical";
+    }
+    /*@GetMapping("/hospitals")
     public String getAll(Model model) {
         *//*for (int i = 0; i < 10; i++) {
             Hospital save = hospitalRepo.save(new Hospital("Shaxnoza"+i, "9999", "chilonzor", Sort.JARROH));

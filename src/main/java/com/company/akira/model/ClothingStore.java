@@ -8,6 +8,8 @@ public class ClothingStore extends Category {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cstore_gen")
     @SequenceGenerator(name = "cstore_gen", sequenceName = "cstore_seq", allocationSize = 1)
     private Long id;
+    private String address;
+    private String mapUrl;
     public ClothingStore() {
     }
 
@@ -22,9 +24,25 @@ public class ClothingStore extends Category {
         this.id = id;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getMapUrl() {
+        return mapUrl;
+    }
+
+    public void setMapUrl(String mapUrl) {
+        this.mapUrl = mapUrl;
+    }
+
     @Override
     public String toString() {
-        return "AutoService{" +
+        return "ClothingStore{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
