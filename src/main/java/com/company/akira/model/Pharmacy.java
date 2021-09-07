@@ -15,8 +15,10 @@ public class Pharmacy extends Category {
     public Pharmacy() {
     }
 
-    public Pharmacy(String name, String phone, String imageUrl) {
+    public Pharmacy(String name, String phone,String mapUrl,String address, String imageUrl) {
         super(name, phone, imageUrl);
+        this.address = address;
+        this.mapUrl = mapUrl;
     }
 
     public Long getId() {
@@ -45,11 +47,13 @@ public class Pharmacy extends Category {
 
     @Override
     public String toString() {
-        return "AutoService{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "Pharmacy{" +
+                ", id=" + id +
+                "name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", address='" + address + '\'' +
+                ", mapUrl='" + mapUrl + '\'' +
                 '}';
     }
 }

@@ -70,10 +70,12 @@ td{
     transform: translateY(-7px);
 }
 a {
+    color: white;!important;
     text-decoration: none;
-    color: wheat;
+
 }
                 
 ::-webkit-scrollbar {
     width: 0;
 }
+

@@ -11,12 +11,12 @@ public class MvcConfig implements WebMvcConfigurer {
     @Value("${upload.path}")
     private String uploadPath;
 
-    public void addViewControllers(ViewControllerRegistry registry) {
-        /*
+   /* public void addViewControllers(ViewControllerRegistry registry) {
+
         registry.addViewController("/login");
         registry.addViewController("/form");
-        */
-    }
+
+    } */
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

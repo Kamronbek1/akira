@@ -14,8 +14,10 @@ public class AutoSpare extends Category {
     public AutoSpare() {
     }
 
-    public AutoSpare(String name, String phone, String imageUrl) {
+    public AutoSpare(String name, String phone,String address,String mapUrl, String imageUrl) {
         super(name, phone, imageUrl);
+        this.address = address;
+        this.mapUrl = mapUrl;
     }
 
     public Long getId() {

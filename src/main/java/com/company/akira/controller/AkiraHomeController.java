@@ -33,8 +33,8 @@ public class AkiraHomeController {
         return "index";
     }
 
-    @GetMapping("/{link}")
+    /*@GetMapping("/{link}")
     public String link(@PathVariable("link") String link) {
         return String.format("/catalog/card/cards_%s", link);
-    }
+    }*/
 }

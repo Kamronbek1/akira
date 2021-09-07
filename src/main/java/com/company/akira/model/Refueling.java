@@ -14,8 +14,10 @@ public class Refueling extends Category {
     public Refueling() {
     }
 
-    public Refueling(String name, String phone, String imageUrl) {
+    public Refueling(String name, String phone,String address,String mapUrl, String imageUrl) {
         super(name, phone, imageUrl);
+        this.address = address;
+        this.mapUrl = mapUrl;
     }
 
     public Long getId() {

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/card.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -15,7 +16,7 @@
 
 </head>
 
-<body>
+<body style="background-image: url(/static/images/fon.jpg);">
 
 <div class="container">
     <br>
@@ -28,8 +29,7 @@
             <button type="button" class="btn btn-primary"><a href="/catalog/apteka/all"
                                                              style="text-decoration: none;color: #fff;">Dorixonalar</a>
             </button>
-
-            <a href="/add/apteka">
+            <a href="/catalog/apteka/add">
                 <svg style="position: absolute; top:0px; right:0px;margin-right:4vw; width:30px; height:30px;"
                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                      class="bi bi-cloud-plus-fill" viewBox="0 0 16 16">
@@ -38,10 +38,13 @@
             </a>
         </div>
     </div>
-
 </div>
 <div th:each="item :${pharmacy}" class="card"
-     style="width: 96vw;margin: 2vw; padding: 1vw; background-color: whitesmoke; background-image: url(./static/images/fon.jpg);">
+     style="
+    width: 96vw;
+    margin: 2vw;
+    padding: 1vw;
+    background-color: transparent;">
     <img style="border-radius:3px solid red;" class="card-img-top" th:src="${item.getImageUrl()}"
          alt=" Card image cap">
     <div class="card-body">
@@ -49,7 +52,8 @@
              style="margin:-10px;margin-top: 5px;"><p>Nomi</p>
         </div>
         <div class="p-3 mb-2 bg-primary text-white"
-             style="margin:-10px;margin-top: 5px;">Tel:<a th:href="'tel:'+${item.getPhone()}"
+             style="margin:-10px;margin-top: 5px;">Tel:<a style="color: white; text-decoration: none;"
+                                                          th:href="'tel:'+${item.getPhone()}"
                                                           th:text="${item.getPhone()}"></a>
         </div>
         <div class="p-3 mb-2 bg-primary text-white" th:text="${item.getAddress()}"
@@ -70,7 +74,8 @@
                     </div>
                 </li>
             </ul>
-            <svg style="margin-top: -55px; margin-left:12px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            <svg style="margin-top: -55px; margin-left:12px;" xmlns="http://www.w3.org/2000/svg" width="16"
+                 height="16"
                  fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
             </svg>
@@ -78,5 +83,4 @@
     </div>
 </div>
 </body>
-
 </html>

@@ -15,8 +15,10 @@ public class AutoService extends Category {
     public AutoService() {
     }
 
-    public AutoService(String name, String phone, String imageUrl) {
+    public AutoService(String name, String phone,String address,String mapUrl, String imageUrl) {
         super(name, phone, imageUrl);
+        this.address = address;
+        this.mapUrl=mapUrl;
     }
 
     public Long getId() {
