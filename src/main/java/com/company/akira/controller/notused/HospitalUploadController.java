@@ -9,6 +9,7 @@ import com.company.akira.model.Hospital;
 import com.company.akira.model.Sort;
 import com.company.akira.repository.HospitalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -30,11 +31,14 @@ import java.util.List;
 @RequestMapping("/catalog")
 public class HospitalUploadController {
 
+    @Value("${upload.path}")
+    private static String UPLOADED_FOLDER;
 
-    private static String UPLOADED_FOLDER = "D:\\server\\photo\\";
+    private final HospitalRepository hospitalRepo;
 
-    @Autowired
-    private HospitalRepository hospitalRepo;
+    public HospitalUploadController(HospitalRepository hospitalRepo) {
+        this.hospitalRepo = hospitalRepo;
+    }
 
     @GetMapping("/hospitals")
     public String getAll(Model model) {
@@ -86,6 +90,6 @@ public class HospitalUploadController {
 
         System.out.println(hospital);
         hospitalRepo.save(hospital);
-        return "redirect:/add0";
+        return "redirect:/uploadStatus";
     }
 }

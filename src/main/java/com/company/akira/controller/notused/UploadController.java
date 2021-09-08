@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,15 +18,14 @@ import java.nio.file.Paths;
 public class UploadController {
 
     //Save the uploaded file to this folder
-    //@Value("upload.folder")
-    private static String UPLOADED_FOLDER="D:/intelej/akira/images/";
+    private static String UPLOADED_FOLDER ="./images/";
 
     @GetMapping("/upload")
     public String index() {
         return "upload";
     }
 
-    @PostMapping("/upload") // //new annotation since 4.3
+    @PostMapping("/upload0") // //new annotation since 4.3
     public String singleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
 
@@ -35,14 +35,13 @@ public class UploadController {
         }
 
         try {
-
             // Get the file and save it somewhere
             byte[] bytes = file.getBytes();
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
-
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
+            redirectAttributes.addFlashAttribute("image", "/images/"+file.getOriginalFilename());
 
         } catch (IOException e) {
             e.printStackTrace();

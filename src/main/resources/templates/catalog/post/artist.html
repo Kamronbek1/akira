@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanatkor Qo`shish</title><link rel="stylesheet" href="add.css">
+    <title>Sanatkor Qo`shish</title>
+    <link rel="stylesheet" href="/static/css/add.css">
+
+    <script src="/static/js/file.js"></script>
 </head>
 <body>
-    <form action="/add/artist"  method="POST" target="_self"   >
+<form action="/add/artist" method="POST" th:object="${user}" enctype="multipart/form-data">
     <table>
-    <tr>
-                <td>Sanatkor ismi:</td>
-                <td><input class="form-control" type="text" name="nomi" placeholder="Sanatkor ismini yozing..." required></td>
-            </tr>
+        <tr>
+            <td>Sanatkor ismi:</td>
+            <td><input class="form-control" type="text" name="nomi" placeholder="Sanatkor ismini yozing..." required>
+            </td>
+        </tr>
 
-            <tr>
-                <td>Telefon:</td>
-                <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
-            </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
+        </tr>
 
-           
-            <tr>
-                  <td>Rasm nomi:</td>
-                <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
-            </tr>
 
-           
-            <tr><td>         
-                   <input type="submit" value="Tasdiqlash">
-            </td></tr>
-            </table>
+        <tr>
+            <td>Rasm</td>
+            <td><input type="file" name="image" accept="image/png, image/jpeg"/></td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <input type="submit" value="Tasdiqlash">
+            </td>
+        </tr>
+    </table>
 </form>
-
-<br>
-<button onclick="window.open('../index.html','_self')">home</button>
 </body>
 </html>
