@@ -34,7 +34,7 @@ public class AutoSpareController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
+        model.addAttribute("tuning", new AutoSpare());
         return "/catalog/post/autozapchast";
     }
 

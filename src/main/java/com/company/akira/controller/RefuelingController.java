@@ -36,14 +36,14 @@ public class RefuelingController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("avtozapravka", new Refueling());
+        return "/catalog/post/zapravka";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") Refueling service) {
+                             @ModelAttribute("avtozapravka") Refueling service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

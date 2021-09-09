@@ -36,14 +36,14 @@ public class GroceryStoreController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("tuning", new GroceryStore());
+        return "/catalog/post/oziqovqat";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") GroceryStore service) {
+                             @ModelAttribute("oziqovqat") GroceryStore service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

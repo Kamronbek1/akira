@@ -36,14 +36,14 @@ public class CarShowroomController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("avtosalon", new CarShowroom());
+        return "/catalog/post/autosalon";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") CarShowroom carShowroom) {
+                             @ModelAttribute("avtosalon") CarShowroom carShowroom) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

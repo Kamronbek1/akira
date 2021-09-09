@@ -31,19 +31,20 @@ public class WaterBasinController {
     @GetMapping("/all")
     public String showAll(Model model) {
         Iterable<WaterBasin> all = repo.findAll();
-        model.addAttribute("basseyn",all);
+        model.addAttribute("basseyn", all);
         return "/catalog/card/cards_basseyn";
     }
+
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("basseyn", new AutoService());
+        return "/catalog/post/basseyn";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") WaterBasin service) {
+                             @ModelAttribute("basseyn") WaterBasin service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

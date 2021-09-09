@@ -36,14 +36,14 @@ public class GasCylinderInstallationController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("metan", new GasCylinderInstallation());
+        return "/catalog/post/metan";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") GasCylinderInstallation service) {
+                             @ModelAttribute("metan") GasCylinderInstallation service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

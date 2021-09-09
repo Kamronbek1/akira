@@ -46,8 +46,8 @@ public class HospitalController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("hospital", new Hospital());
+        return "/catalog/post/medical";
     }
 
     @PostMapping("/post")
