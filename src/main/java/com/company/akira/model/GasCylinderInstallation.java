@@ -10,13 +10,11 @@ public class GasCylinderInstallation extends Category {
     @SequenceGenerator(name = "gci_gen", sequenceName = "gci_seq", allocationSize = 1)
     private Long id;
 
-    private String address;
-    private String mapUrl;
     public GasCylinderInstallation() {
     }
 
-    public GasCylinderInstallation(String name, String phone, String imageUrl) {
-        super(name, phone, imageUrl);
+    public GasCylinderInstallation(String name, String address, String phone, String imageUrl, String mapUrl) {
+        super(name, address, phone, imageUrl, mapUrl);
     }
 
     public Long getId() {
@@ -27,21 +25,6 @@ public class GasCylinderInstallation extends Category {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getMapUrl() {
-        return mapUrl;
-    }
-
-    public void setMapUrl(String mapUrl) {
-        this.mapUrl = mapUrl;
-    }
 
     @Override
     public String toString() {

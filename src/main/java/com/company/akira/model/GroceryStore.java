@@ -9,14 +9,13 @@ public class GroceryStore extends Category {
     @SequenceGenerator(name = "gs_gen", sequenceName = "gs_seq", allocationSize = 1)
     private Long id;
 
-    private String address;
-    private String mapUrl;
     public GroceryStore() {
     }
 
-    public GroceryStore(String name, String phone, String imageUrl) {
-        super(name, phone, imageUrl);
+    public GroceryStore(String name, String address, String phone, String imageUrl, String mapUrl) {
+        super(name, address, phone, imageUrl, mapUrl);
     }
+
     public Long getId() {
         return id;
     }
@@ -25,21 +24,6 @@ public class GroceryStore extends Category {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getMapUrl() {
-        return mapUrl;
-    }
-
-    public void setMapUrl(String mapUrl) {
-        this.mapUrl = mapUrl;
-    }
 
     @Override
     public String toString() {

@@ -9,16 +9,11 @@ public class AutoService extends Category {
     @SequenceGenerator(name = "as_gen", sequenceName = "as_seq", allocationSize = 1)
     private Long id;
 
-    private String address;
-    private String mapUrl;
-
     public AutoService() {
     }
 
-    public AutoService(String name, String phone,String address,String mapUrl, String imageUrl) {
-        super(name, phone, imageUrl);
-        this.address = address;
-        this.mapUrl=mapUrl;
+    public AutoService(String name, String address, String phone, String imageUrl, String mapUrl) {
+        super(name, address, phone, imageUrl, mapUrl);
     }
 
     public Long getId() {
@@ -27,22 +22,6 @@ public class AutoService extends Category {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getMapUrl() {
-        return mapUrl;
-    }
-
-    public void setMapUrl(String mapUrl) {
-        this.mapUrl = mapUrl;
     }
 
     @Override

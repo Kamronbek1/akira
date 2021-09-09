@@ -6,16 +6,20 @@ import javax.persistence.MappedSuperclass;
 public class Category {
 
     protected String name;
+    protected String address;
     protected String phone;
     protected String imageUrl;
+    protected String mapUrl;
 
     public Category() {
     }
 
-    public Category(String name, String phone, String imageUrl) {
+    public Category(String name, String address, String phone, String imageUrl, String mapUrl) {
         this.name = name;
+        this.address = address;
         this.phone = phone;
         this.imageUrl = imageUrl;
+        this.mapUrl = mapUrl;
     }
 
     public String getName() {

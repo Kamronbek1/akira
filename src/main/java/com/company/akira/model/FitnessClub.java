@@ -8,38 +8,20 @@ public class FitnessClub extends Category {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fc_gen")
     @SequenceGenerator(name = "fc_gen", sequenceName = "fc_seq", allocationSize = 1)
     private Long id;
-    private String address;
-    private String mapUrl;
+
     public FitnessClub() {
     }
 
-    public FitnessClub(String name, String phone,String address,String mapUrl, String imageUrl) {
-        super(name, phone, imageUrl);
-        this.address = address;
-        this.mapUrl = mapUrl;
+    public FitnessClub(String name, String address, String phone, String imageUrl, String mapUrl) {
+        super(name, address, phone, imageUrl, mapUrl);
     }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getMapUrl() {
-        return mapUrl;
-    }
-
-    public void setMapUrl(String mapUrl) {
-        this.mapUrl = mapUrl;
     }
 
     @Override

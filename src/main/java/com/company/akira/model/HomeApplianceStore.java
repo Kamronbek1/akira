@@ -9,38 +9,19 @@ public class HomeApplianceStore extends Category {
     @SequenceGenerator(name = "HAS_gen", sequenceName = "HAS_seq", allocationSize = 1)
     private Long id;
 
-    private String address;
-    private String mapUrl;
     public HomeApplianceStore() {
     }
 
-    public HomeApplianceStore(String name, String phone,String address, String imageUrl,String mapUrl) {
-        super(name, phone, imageUrl);
-        this.address = address;
-        this.mapUrl = mapUrl;
+    public HomeApplianceStore(String name, String address, String phone, String imageUrl, String mapUrl) {
+        super(name, address, phone, imageUrl, mapUrl);
     }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getMapUrl() {
-        return mapUrl;
-    }
-
-    public void setMapUrl(String mapUrl) {
-        this.mapUrl = mapUrl;
     }
 
     @Override
