@@ -18,7 +18,6 @@ import java.nio.file.Paths;
 @RequestMapping("/catalog/maishiy")
 public class HomeApplianceStoreController {
 
-
     private final HomeApplianceStoreRepository repo;
 
     public HomeApplianceStoreController(HomeApplianceStoreRepository repo) {
@@ -28,19 +27,19 @@ public class HomeApplianceStoreController {
     @GetMapping("/all")
     public String showAll(Model model) {
         Iterable<HomeApplianceStore> all = repo.findAll();
-        model.addAttribute("maishiy",all);
+        model.addAttribute("bitovoy",all);
         return "/catalog/card/cards_maishiy";
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("maishiy", new HomeApplianceStore());
+        model.addAttribute("bitovoy", new HomeApplianceStore());
         return "/catalog/post/maishiy";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("maishiy") HomeApplianceStore service) {
+                             @ModelAttribute("bitovoy") HomeApplianceStore service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";
