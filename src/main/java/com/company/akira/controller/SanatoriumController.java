@@ -1,9 +1,6 @@
 package com.company.akira.controller;
 
-import com.company.akira.model.Actor;
-import com.company.akira.model.AutoService;
 import com.company.akira.model.Sanatorium;
-import com.company.akira.repository.ActorRepository;
 import com.company.akira.repository.SanatoriumRepository;
 import com.company.akira.utl.Const;
 import org.springframework.stereotype.Controller;
@@ -36,14 +33,14 @@ public class SanatoriumController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("sanatorium", new Sanatorium());
+        return "/catalog/post/sanatory";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") Sanatorium service) {
+                             @ModelAttribute("sanatorium") Sanatorium service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

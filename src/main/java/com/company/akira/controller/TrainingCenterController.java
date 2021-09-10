@@ -36,14 +36,14 @@ public class TrainingCenterController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("oquv", new TrainingCenter());
+        return "/catalog/post/trainingcenter";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") TrainingCenter service) {
+                             @ModelAttribute("oquv") TrainingCenter service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

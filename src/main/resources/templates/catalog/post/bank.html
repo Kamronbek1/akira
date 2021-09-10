@@ -9,44 +9,40 @@
 <body>
     <form action="/add/bank"  method="POST" target="_self"   >
     <table>
-    <tr>
-                <td>Bank Nomi:</td>
-                <td><input class="form-control" type="text" name="nomi" placeholder="Bank nomi..." required></td>
-            </tr>
+        <tr>
+            <td>Bank Nomi:</td>
+            <td><input class="form-control" type="text" name="nomi" th:field="*{name}" placeholder="Bank nomi..."
+                       required></td>
+        </tr>
 
-            <tr>
-                <td>Telefon:</td>
-                <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
-            </tr>
-
-          
-            <tr>
-                <td>Iframe src:</td>
-                <td><input class="form-control" type="text" name="iframesrc" placeholder="Iframe src" required></td>
-            </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td><input class="form-control" type="tel" name="telefon" th:field="*{phone}"
+                       placeholder="+998 (93) 123-45-67" required></td>
+        </tr>
 
 
-
-            <tr>
-                  <td>Rasm nomi:</td>
-                <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
-            </tr>
-
-            <tr>
-                <td>Manzil:</td>
-                <td><input class="form-control" type="text" name="manzil" placeholder="manzil" required></td>
-            </tr>
-          
+        <tr>
+            <td>Iframe src:</td>
+            <td><input class="form-control" type="text" name="iframesrc" th:field="*{mapUrl}" placeholder="Iframe src"
+                       required></td>
+        </tr>
 
 
-                    </td>
-            </tr>
-
-            
-           
-<tr><td>            <input type="submit" value="Tasdiqlash">
-            </td></tr>
-            </table>
+        <tr>
+            <td>Rasm</td>
+            <td><input type="file" name="image" accept="image/png, image/jpeg"/></td>
+        </tr>
+        <tr>
+            <td>Manzil:</td>
+            <td><input class="form-control" type="text" name="manzil" th:field="*{address}" placeholder="manzil" required>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Tasdiqlash">
+            </td>
+        </tr>
+    </table>
 </form>
 <br>
 <button onclick="window.open('../index.html','_self')">home</button>

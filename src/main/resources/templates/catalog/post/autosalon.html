@@ -9,20 +9,23 @@
 <body>
     <form action="/add/autosalon"  method="POST" target="_self"   >
     <table>
-    <tr>
-                <td>Avtosalon Nomi:</td>
-                <td><input class="form-control" type="text" name="nomi" placeholder="Avtosalon nomi..." required></td>
-            </tr>
+        <tr>
+            <td>Avtosalon Nomi:</td>
+            <td><input class="form-control" type="text" name="nomi" th:field="*{name}" placeholder="Avtosalon nomi..."
+                       required></td>
+        </tr>
 
-            <tr>
-                <td>Telefon:</td>
-                <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
-            </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td><input class="form-control" type="tel" name="telefon" th:field="*{phone}"
+                       placeholder="+998 (93) 123-45-67" required></td>
+        </tr>
 
-            <tr>
-                <td>Iframe src:</td>
-                <td><input class="form-control" type="text" name="iframesrc" placeholder="Iframe src" required></td>
-            </tr>
+        <tr>
+            <td>Iframe src:</td>
+            <td><input class="form-control" type="text" name="iframesrc" th:field="*{mapUrl}" placeholder="Iframe src"
+                       required></td>
+        </tr>
 
 
 
@@ -31,16 +34,17 @@
                 <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
             </tr>
 
-            <tr>
-                <td>Manzil:</td>
-                <td><input class="form-control" type="text" name="manzil" placeholder="manzil" required></td>
-            </tr>
-            <tr>
-                <td>Mavjud mashinalar:</td>
-                <td><input type="text" name="mashina" id="mashina" placeholder="=>Tanlang" class="selectedarea"   required>
-                    <form action="" method="" accept-charset="utf-8"  aria-required="true">
-                       
-                        <div class="checkselect">
+        <tr>
+            <td>Manzil:</td>
+            <td><input class="form-control" type="text" name="manzil" th:field="*{address}" placeholder="manzil" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Mavjud mashinalar:</td>
+            <td><input type="text" name="mashina" id="mashina" placeholder="=>Tanlang" class="selectedarea" required>
+                <form action="" method="" accept-charset="utf-8" aria-required="true">
+
+                    <div class="checkselect">
 
 
                         <label><input type="checkbox" name="brands[]" value="Tracker 2"> Tracker 2</label>

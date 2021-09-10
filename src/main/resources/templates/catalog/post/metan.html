@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dokon Qo`shish</title>
-    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="/static/css/add.css">
 
     <script src="/static/js/file.js"></script>
 </head>
@@ -14,18 +14,21 @@
     <table>
         <tr>
             <td>Dokon Nomi:</td>
-            <td><input class="form-control" type="text" name="nomi" placeholder="Dokon nomi..." required></td>
+            <td><input class="form-control" type="text" name="nomi" th:field="*{name}" placeholder="Dokon nomi..."
+                       required></td>
         </tr>
 
         <tr>
             <td>Telefon:</td>
-            <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
+            <td><input class="form-control" type="tel" name="telefon" th:field="*{name}"
+                       placeholder="+998 (93) 123-45-67" required></td>
         </tr>
 
 
         <tr>
             <td>Iframe src:</td>
-            <td><input class="form-control" type="text" name="iframesrc" placeholder="Iframe src" required></td>
+            <td><input class="form-control" type="text" name="iframesrc" th:field="*{name}" placeholder="Iframe src"
+                       required></td>
         </tr>
 
 
@@ -36,7 +39,8 @@
 
         <tr>
             <td>Manzil:</td>
-            <td><input class="form-control" type="text" name="manzil" placeholder="manzil" required></td>
+            <td><input class="form-control" type="text" name="manzil" th:field="*{name}" placeholder="manzil" required>
+            </td>
         </tr>
         <tr>
             <td>Maxsulot turlari:</td>
@@ -44,12 +48,6 @@
                        required>
             </td>
         </tr>
-
-
-        </td>
-        </tr>
-
-
         <tr>
             <td><input type="submit" value="Tasdiqlash">
             </td>

@@ -37,7 +37,7 @@ public class CallCenterOfficeController {
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("aloqa", new CallCenterOffice());
-        return "/catalog/post/";
+        return "/catalog/post/svyazoffice";
     }
 
     @PostMapping("/post")

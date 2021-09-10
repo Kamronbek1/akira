@@ -37,7 +37,7 @@ public class WaterBasinController {
 
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("basseyn", new AutoService());
+        model.addAttribute("basseyn", new WaterBasin());
         return "/catalog/post/basseyn";
     }
 

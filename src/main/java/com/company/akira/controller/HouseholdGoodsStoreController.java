@@ -34,7 +34,7 @@ public class HouseholdGoodsStoreController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new HouseholdGoodsStore());
+        model.addAttribute("xojalik", new HouseholdGoodsStore());
         return "/catalog/post/xozmag";
     }
 

@@ -36,7 +36,7 @@ public class BuildingMaterialsStoreController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new BuildingMaterialsStore());
+        model.addAttribute("qurilish", new BuildingMaterialsStore());
         return "/catalog/post/stroymag";
     }
 

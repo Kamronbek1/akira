@@ -9,20 +9,23 @@
 <body>
     <form action="/add/beauty"  method="POST" target="_self"   >
     <table>
-    <tr>
-                <td>Salon Nomi:</td>
-                <td><input class="form-control" type="text" name="nomi" placeholder="Salon nomi..." required></td>
-            </tr>
+        <tr>
+            <td>Salon Nomi:</td>
+            <td><input class="form-control" type="text" name="nomi" th:field="*{name}" placeholder="Salon nomi..."
+                       required></td>
+        </tr>
 
-            <tr>
-                <td>Telefon:</td>
-                <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
-            </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td><input class="form-control" type="tel" name="telefon" th:field="*{name}"
+                       placeholder="+998 (93) 123-45-67" required></td>
+        </tr>
 
-            <tr>
-                <td>Iframe src:</td>
-                <td><input class="form-control" type="text" name="iframesrc" placeholder="Iframe src" required></td>
-            </tr>
+        <tr>
+            <td>Iframe src:</td>
+            <td><input class="form-control" type="text" name="iframesrc" th:field="*{name}" placeholder="Iframe src"
+                       required></td>
+        </tr>
 
 
 
@@ -31,27 +34,21 @@
                 <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
             </tr>
 
-            <tr>
-                <td>Manzil:</td>
-                <td><input class="form-control" type="text" name="manzil" placeholder="manzil" required></td>
-            </tr>
-            <tr>
-                <td>Xizmat turlari:</td>
-                <td><input type="text" name="turi" id="turi" placeholder="xizmat turlari..." class="selectedarea"   required>
-               </td>
-            </tr>
-
-
-
-
-                    </td>
-            </tr>
-
-            
-           
-<tr><td>            <input type="submit" value="Tasdiqlash">
-            </td></tr>
-            </table>
+        <tr>
+            <td>Manzil:</td>
+            <td><input class="form-control" type="text" name="manzil" th:field="*{name}" placeholder="manzil" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Xizmat turlari:</td>
+            <td><input type="text" name="turi" id="turi" placeholder="xizmat turlari..." class="selectedarea" required>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Tasdiqlash">
+            </td>
+        </tr>
+    </table>
 </form>
 <br>
 <button onclick="window.open('../index.html','_self')">home</button>

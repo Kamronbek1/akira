@@ -14,22 +14,20 @@
     <table>
         <tr>
             <td>Sanatkor ismi:</td>
-            <td><input class="form-control" type="text" name="nomi" placeholder="Sanatkor ismini yozing..." required>
+            <td><input class="form-control" type="text" name="nomi" th:field="*{name}"
+                       placeholder="Sanatkor ismini yozing..." required>
             </td>
         </tr>
 
         <tr>
             <td>Telefon:</td>
-            <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
+            <td><input class="form-control" type="tel" name="telefon" th:field="*{phone}"
+                       placeholder="+998 (93) 123-45-67" required></td>
         </tr>
-
-
         <tr>
             <td>Rasm</td>
             <td><input type="file" name="image" accept="image/png, image/jpeg"/></td>
         </tr>
-
-
         <tr>
             <td>
                 <input type="submit" value="Tasdiqlash">

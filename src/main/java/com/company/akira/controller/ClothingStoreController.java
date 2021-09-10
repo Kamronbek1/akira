@@ -36,7 +36,7 @@ public class ClothingStoreController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new ClothingStore());
+        model.addAttribute("kiyim", new ClothingStore());
         return "/catalog/post/kiyim";
     }
 

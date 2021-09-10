@@ -36,14 +36,14 @@ public class SmartphoneStoreController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new AutoService());
-        return "/catalog/post/";
+        model.addAttribute("smartfon", new SmartphoneStore());
+        return "/catalog/post/smartfon";
     }
 
     @PostMapping("/post")
     public String submitForm(@RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes,
-                             @ModelAttribute("hospital") SmartphoneStore service) {
+                             @ModelAttribute("smartfon") SmartphoneStore service) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";

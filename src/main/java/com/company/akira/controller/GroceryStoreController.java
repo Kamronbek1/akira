@@ -36,7 +36,7 @@ public class GroceryStoreController {
     }
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("tuning", new GroceryStore());
+        model.addAttribute("oziqovqat", new GroceryStore());
         return "/catalog/post/oziqovqat";
     }
 
