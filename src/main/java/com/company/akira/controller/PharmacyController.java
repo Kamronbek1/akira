@@ -1,6 +1,5 @@
 package com.company.akira.controller;
 
-import com.company.akira.model.AutoService;
 import com.company.akira.model.Pharmacy;
 import com.company.akira.repository.PharmacyRepository;
 import com.company.akira.utl.Const;

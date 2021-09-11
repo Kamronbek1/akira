@@ -24,5 +24,4 @@ public class GlobalExceptionHandler {
         return "redirect:/errorPage";
 
     }*/
-
 }

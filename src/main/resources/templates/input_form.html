@@ -12,7 +12,7 @@
 <div align="center">
     <h1>Hospital
     </h1>
-    <form th:action="@{/addHospital0}" method="post" th:object="${hospital}" class="formstyle"
+    <form action="/addHospital" method="post" th:object="${hospital}" class="formstyle"
           enctype="multipart/form-data">
         <label class="labeltext">Name:</label>
         <input type="text" th:field="*{name}" class="formstyle"><br>

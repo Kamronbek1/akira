@@ -1,5 +1,6 @@
-var uploadField = document.getElementById("image");
-var str, file;
+
+let uploadField = document.getElementById("image");
+let str, file;
 uploadField.onchange = function () {
     file = this.files[0];
     str = file.name.toLowerCase();
@@ -7,9 +8,12 @@ uploadField.onchange = function () {
         if (file.size > 5000000) {
             alert("Fayl xajmi 5mb katta, iltmos kichikroq hajimli rasm kiriting!!!");
             this.value = "";
+        }else{
+            return;
         }
     } else {
         alert("Faqat rasm joylashingiz mumkin!!!");
         this.value = "";
     }
 };
+
