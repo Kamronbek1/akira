@@ -31,13 +31,18 @@ class AkiraApplicationTests {
     private FitnessClubRepository fitnessClubRepository;
 
     String[][] arr = {
-            {"ARZON APTEKA", "71 2180006", "https://yandex.uz/map-widget/v1/-/CCUmuPuY0B", "/images/apteka1.jpg", "Shahar: TOSHKENT Tuman: Shayxontohur JAR-ARIK ko\'chasi, IBN SINO-2 dahasi, 7B"},
-            {"TASHAPTEKA", "71 2681509", "https://yandex.uz/map-widget/v1/-/CCUmuPRHKB", "/images/apteka2.jpg", "Shahar: TOSHKENT Tuman: Mirzo-Ulug\'bek BUYUK IPAK YO\'LI ko\'chasi, 105/2"},
-            {"A5", "+99899 8731851", "https://yandex.uz/map-widget/v1/-/CCUmuPfe~B", "/images/apteka3.jpg", "Shahar: TOSHKENT Tuman: Chilonzor MUKIMI kochasi, 1/1"},
-            {"А7", "+99893 0036446", "https://yandex.uz/map-widget/v1/-/CCUmuPGcOA", "/images/apteka4.jpg", "Shahar: TOSHKENT Tuman: Chilonzor CHAPANOTA kochasi, CHILONZOR-2 mavzesi, 58"},
-            {"HEALTHMART DORIXONASI", "71 2317755", "https://yandex.uz/map-widget/v1/-/CCUmuPwVgD", "/images/apteka5.jpg", "Shahar: TOSHKENT Tuman: Olmazor FAROBIY ko\'chasi, 448D"}};
+            {"ARZON APTEKA", "71 2180006", "https://yandex.uz/map-widget/v1/-/CCUmuPuY0B", "/images/apteka1.jpg",
+                    "Shahar: TOSHKENT Tuman: Shayxontohur JAR-ARIK ko\'chasi, IBN SINO-2 dahasi, 7B"},
+            {"TASHAPTEKA", "71 2681509", "https://yandex.uz/map-widget/v1/-/CCUmuPRHKB", "/images/apteka2.jpg",
+                    "Shahar: TOSHKENT Tuman: Mirzo-Ulug\'bek BUYUK IPAK YO\'LI ko\'chasi, 105/2"},
+            {"A5", "+99899 8731851", "https://yandex.uz/map-widget/v1/-/CCUmuPfe~B", "/images/apteka3.jpg",
+                    "Shahar: TOSHKENT Tuman: Chilonzor MUKIMI kochasi, 1/1"},
+            {"А7", "+99893 0036446", "https://yandex.uz/map-widget/v1/-/CCUmuPGcOA", "/images/apteka4.jpg",
+                    "Shahar: TOSHKENT Tuman: Chilonzor CHAPANOTA kochasi, CHILONZOR-2 mavzesi, 58"},
+            {"HEALTHMART DORIXONASI", "71 2317755", "https://yandex.uz/map-widget/v1/-/CCUmuPwVgD", "/images/apteka5.jpg",
+                    "Shahar: TOSHKENT Tuman: Olmazor FAROBIY ko\'chasi, 448D"}};
 
-    String[][] arr0 = {
+    /*String[][] arr0 = {
             {" IMAGINE MChJ", "+99893 5021702", "https://yandex.uz/map-widget/v1/-/CCUmyHXB1B", "IMAGINE.jpg", "TOSHKENT Tuman: Yunusobod 1-chi YANGITARNOV {eski nomi IBROXIM AHMAD kochasi} tor kochasi, 12"},
             {"EVACUATOR.UZ", "+99890 9999909", "https://yandex.uz/map-widget/v1/-/CCUmyLeXSC", "EVACUATOR.jpg", "TOSHKENT Tuman: Mirzo-Ulugbek 1-chi YANGITARNOV {eski nomi IBROXIM AHMAD kochasi} tor kochasi, 8"},
             {" DISK OSIYO", "+99891 1352169", "https://yandex.uz/map-widget/v1/-/CCUmyLu5dB", "DISK OSIYO.png", "TOSHKENT Tuman: Sirgali YANGI SIRGALI YOLI kochasi, 6A"},
@@ -115,22 +120,22 @@ class AkiraApplicationTests {
             {"SEREBRO ZARGARLIK DOKONI", "+99897 7711424", "https://yandex.uz/map-widget/v1/-/CCUmu2sPTC", "SEREBRO", "Tuman: Chilonzor CHILONZOR-C mavzesi, BUNYODKOR shoh kochasi, 52/2"},
             {"ARGENTO BELLO ZARGARLIK DOKONI ", "+99890 3505222", "https://yandex.uz/map-widget/v1/-/CCUmyHvzOD", "ARGENTO", "Shahar: TOSHKENT Tuman: Chilonzor CHILONZOR-C mavzesi, BUNYODKOR shoh kochasi, 52/2"},
             {"PANDORA ZARGARLIK DOKONI", "+99897 9713993", "https://yandex.uz/map-widget/v1/-/CCUmyHCqkA", "PANDORA", "Shahar: TOSHKENT Tuman: Olmazor NURAFSHON aylanma koch., 4"}};
-
+*/
 
     @Test
     void contextLoads() {
-        for (int i = 0; i < arr.length; i++) {
-            Pharmacy club = new Pharmacy(arr[i][0], arr[i][1], arr[i][2], arr[i][4], arr[i][3]);
+        for (int i = 0; i < arr.length; i++) {//name, address, phone, imageUrl, mapUrl
+            Pharmacy club = new Pharmacy(arr[i][0], arr[i][4], arr[i][1], arr[i][3], arr[i][2]);
             System.out.println(repository.save(club));
         }
-        for (int i = 0; i < arr0.length; i++) {
+        /*for (int i = 0; i < arr0.length; i++) {
             AutoService autoService = new AutoService(arr0[i][0], arr0[i][1], arr0[i][4], arr0[i][2], arr0[i][3]);
             System.out.println(autoServiceRepository.save(autoService));
         }
-        /*for (int i = 0; i < arr1.length; i++) {
+        *//*for (int i = 0; i < arr1.length; i++) {
             AutoSpare autoSpare = new AutoSpare(arr1[i][0], arr1[i][1], arr1[i][4], arr1[i][2], arr1[i][3]);
             System.out.println(spareRepository.save(autoSpare));
-        }*/
+        }*//*
         for (int i = 0; i < arr2.length; i++) {
             Refueling refueling = new Refueling(arr2[i][0], arr2[i][1], arr2[i][4], arr2[i][2], arr2[i][3]);
             System.out.println(refuelingRepository.save(refueling));
@@ -143,15 +148,15 @@ class AkiraApplicationTests {
             HomeApplianceStore applianceStore = new HomeApplianceStore(arr4[i][0], arr4[i][1], arr4[i][4], arr4[i][2], arr4[i][3]);
             System.out.println(homeApplianceStoreRepository.save(applianceStore));
         }
-        /*for (int i = 0; i < arr5.length; i++) {
+        *//*for (int i = 0; i < arr5.length; i++) {
             Hospital hospital = new Hospital(arr[i][0], arr[i][1], arr[i][2], arr[i][4], arr[i][3]);
             System.out.println(repository.save(club));
-        }*/
+        }*//*
         for (int i = 0; i < arr6.length; i++) {
            Sanatorium sanatorium = new Sanatorium(arr6[i][0], arr6[i][1], arr6[i][4], arr6[i][2], arr6[i][3]);
             System.out.println(sanatoriumRepository.save(sanatorium));
         }
-        /*for (int i = 0; i < arr7.length; i++) {
+        *//*for (int i = 0; i < arr7.length; i++) {
             Bank bank = new Bank(arr[i][0], arr[i][1], arr[i][2], arr[i][4], arr[i][3]);
             System.out.println(repository.save(club));
         }

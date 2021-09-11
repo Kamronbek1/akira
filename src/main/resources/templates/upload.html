@@ -5,7 +5,7 @@
 <h1>Spring Boot file upload example</h1>
 
 <form method="POST" th:action="@{/upload0}" enctype="multipart/form-data">
-    <input type="file" name="file"/><br/><br/>
+    <input type="file" name="file" accept="image/png, image/jpeg"/><br/><br/>
     <input type="submit" value="Submit"/>
 </form>
 

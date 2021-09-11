@@ -24,7 +24,6 @@ public class Sanatorium extends Category {
         this.id = id;
     }
 
-
     @Override
     public String toString() {
         return "Sanatorium{" +

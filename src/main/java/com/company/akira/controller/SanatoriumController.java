@@ -28,13 +28,13 @@ public class SanatoriumController {
     @GetMapping("/all")
     public String showAll(Model model) {
         Iterable<Sanatorium> all = repo.findAll();
-        model.addAttribute("sanatorium",all);
-        return "/catalog/card/cards_sanatory";
+        model.addAttribute("sanatoriums",all);
+        return "/catalog/card/cards_sanatorium";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("sanatorium", new Sanatorium());
-        return "/catalog/post/sanatory";
+        return "/catalog/post/sanatorium";
     }
 
     @PostMapping("/post")
