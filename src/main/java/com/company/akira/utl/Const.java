@@ -1,5 +1,5 @@
 package com.company.akira.utl;
 
 public final class Const {
-    public static String UPLOAD_PATH = "./images/";
+    public static String UPLOAD_PATH = "/deploy/public/images/";
 }

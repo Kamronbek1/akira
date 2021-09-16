@@ -6,11 +6,7 @@ import com.company.akira.repository.ActorRepository;
 import com.company.akira.utl.Const;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -22,7 +18,6 @@ import java.nio.file.Paths;
 @Controller
 @RequestMapping("/catalog/artist")
 public class ActorController {
-
 
     private final ActorRepository repo;
 
@@ -65,6 +60,10 @@ public class ActorController {
         }
         repo.save(actor);
         return "redirect:/uploadStatus";
+    }
+    @PutMapping(value = "/edit/{id}")
+    public String edit(@PathVariable("id") Long id){
+        return "";
     }
 
 }

@@ -28,8 +28,8 @@ public class Pharmacy extends Category {
     @Override
     public String toString() {
         return "Pharmacy{" +
-                ", id=" + id +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", address='" + address + '\'' +

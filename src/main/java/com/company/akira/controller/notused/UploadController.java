@@ -25,7 +25,7 @@ public class UploadController {
     }
 
     @PostMapping("/upload0") // //new annotation since 4.3
-    public String singleFileUpload(@RequestParam("file") MultipartFile file,
+    public String singleFileUpload(@RequestParam(value = "file",required = false) MultipartFile file,
                                    RedirectAttributes redirectAttributes) throws MultipartException {
 
         if (file.isEmpty()) {

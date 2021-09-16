@@ -9,23 +9,53 @@ body{
     overflow-y: hidden;
 }
 form {
-    height: 63vh;
-    border-radius: 10vw;
-    width: 85vw;
+
+    border-radius: 50px;
+    /*height: 400px;*/
+    width: 85%;
     box-sizing: border-box;
-    padding:  5vw;
+    padding:  30px;
     background-color: rgba(255, 255, 255, 0.4);
-    margin: 20vh 7.5vw;
+    margin: 30px 30px;
 }
 input{
-    border-radius: 2vw;
-    width:35vw;
-    height: 3vh;
+    border-radius: 4px;
+    width:100%;
+    height: 30px;
     background-color: rgba(255, 255, 255, 0.5);
 }
 td{
     border-bottom: 2px dashed rgb(204, 80, 80);
     padding: 12px 0;
+}
+/* iphone X */
+@media (min-width: 375px) {
+        .form{
+            margin: 20px 25px;
+        }
+}
+
+
+            /* ipad pro  */
+@media (min-width: 768px) {
+    body{
+        border-radius: 20px;
+        width: 85%;
+        box-sizing: border-box;
+        padding: 30px 120px;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 30px 55px;
+    }
+
+}
+@media (min-width: 1440px) {
+    body{
+        width: 70%;
+        box-sizing: border-box;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 17px 171px;
+    }
 }
 
 

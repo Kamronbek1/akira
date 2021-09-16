@@ -9,10 +9,11 @@
 <body>
     <form action="/add/stolovoy"  method="POST" target="_self" >
     <table>
-    <tr>
-                <td>Joy Nomi:</td>
-                <td><input class="form-control" type="text" name="nomi" placeholder="Joy nomi..." required></td>
-            </tr>
+        <tr>
+            <td>Joy Nomi:</td>
+            <td><input class="form-control" type="text"  th:field="*{name}" placeholder="Joy nomi..."
+                       required></td>
+        </tr>
 
             <tr>
                 <td>Telefon:</td>

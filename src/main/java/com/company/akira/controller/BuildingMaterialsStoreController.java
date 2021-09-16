@@ -1,9 +1,6 @@
 package com.company.akira.controller;
 
-import com.company.akira.model.Actor;
-import com.company.akira.model.AutoService;
 import com.company.akira.model.BuildingMaterialsStore;
-import com.company.akira.repository.ActorRepository;
 import com.company.akira.repository.BuildingMaterialsStoreRepository;
 import com.company.akira.utl.Const;
 import org.springframework.stereotype.Controller;
