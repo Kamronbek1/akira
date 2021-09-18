@@ -29,12 +29,12 @@ public class JewelryStoreController {
     public String showAll(Model model) {
         Iterable<JewelryStore> all = repo.findAll();
         model.addAttribute("zargarlik",all);
-        return "/catalog/card/cards_zargarlik";
+        return "catalog/card/cards_zargarlik";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("zargarlik", new JewelryStore());
-        return "/catalog/post/zargarlik";
+        return "catalog/post/zargarlik";
     }
 
     @PostMapping("/post")

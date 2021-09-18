@@ -32,12 +32,12 @@ public class SmartphoneStoreController {
     public String showAll(Model model) {
         Iterable<SmartphoneStore> all = repo.findAll();
         model.addAttribute("smartfon",all);
-        return "/catalog/card/cards_smartfon";
+        return "catalog/card/cards_smartfon";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("smartfon", new SmartphoneStore());
-        return "/catalog/post/smartfon";
+        return "catalog/post/smartfon";
     }
 
     @PostMapping("/post")

@@ -30,12 +30,12 @@ public class AutoSpareController {
     public String showAll(Model model) {
         Iterable<AutoSpare> all = repo.findAll();
         model.addAttribute("avtozapchast",all);
-        return "/catalog/card/cards_avtozapchast";
+        return "catalog/card/cards_avtozapchast";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("avtozapchast", new AutoSpare());
-        return "/catalog/post/autozapchast";
+        return "catalog/post/autozapchast";
     }
 
     @PostMapping("/post")

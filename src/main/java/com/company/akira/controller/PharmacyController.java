@@ -28,12 +28,12 @@ public class PharmacyController {
     public String showAll(Model model) {
         Iterable<Pharmacy> all = repo.findAll();
         model.addAttribute("pharmacy",all);
-        return "/catalog/card/cards_apteka";
+        return "catalog/card/cards_apteka";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("pharmacy", new Pharmacy());
-        return "/catalog/post/apteka";
+        return "catalog/post/apteka";
     }
 
     @PostMapping("/post")

@@ -42,12 +42,12 @@ public class HospitalController {
     public String showAll(Model model) {
         Iterable<Hospital> all = repo.findAll();
         model.addAttribute("hospital", all);
-        return "/catalog/card/cards_medical";
+        return "catalog/card/cards_medical";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("hospital", new Hospital());
-        return "/catalog/post/medical";
+        return "catalog/post/medical";
     }
 
     @PostMapping("/post")

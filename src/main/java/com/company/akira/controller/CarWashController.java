@@ -31,13 +31,13 @@ public class CarWashController {
     public String showAll(Model model) {
         Iterable<CarWash> all = repo.findAll();
         model.addAttribute("avtomoyka", all);
-        return "/catalog/card/cards_avtomoyka";
+        return "catalog/card/cards_avtomoyka";
     }
 
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("avtomoyka", new CarWash());
-        return "/catalog/post/automoyka";
+        return "catalog/post/automoyka";
     }
 
     @PostMapping("/post")

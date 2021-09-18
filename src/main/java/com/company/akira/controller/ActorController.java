@@ -29,12 +29,12 @@ public class ActorController {
     public String showAll(Model model) {
         Iterable<Actor> all = repo.findAll();
         model.addAttribute("actor",all);
-        return "/catalog/card/cards_artist";
+        return "catalog/card/cards_artist";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("actor", new Actor());
-        return "/catalog/post/artist";
+        return "catalog/post/artist";
     }
 
     @PostMapping("/post")

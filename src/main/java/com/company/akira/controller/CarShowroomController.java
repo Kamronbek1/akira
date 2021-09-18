@@ -32,12 +32,12 @@ public class CarShowroomController {
     public String showAll(Model model) {
         Iterable<CarShowroom> all = repo.findAll();
         model.addAttribute("avtosalon",all);
-        return "/catalog/card/cards_avtosalon";
+        return "catalog/card/cards_avtosalon";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("avtosalon", new CarShowroom());
-        return "/catalog/post/autosalon";
+        return "catalog/post/autosalon";
     }
 
     @PostMapping("/post")

@@ -32,12 +32,12 @@ public class ClothingStoreController {
     public String showAll(Model model) {
         Iterable<ClothingStore> all = repo.findAll();
         model.addAttribute("kiyim",all);
-        return "/catalog/card/cards_kiyimkechak";
+        return "catalog/card/cards_kiyimkechak";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("kiyim", new ClothingStore());
-        return "/catalog/post/kiyim";
+        return "catalog/post/kiyim";
     }
 
     @PostMapping("/post")

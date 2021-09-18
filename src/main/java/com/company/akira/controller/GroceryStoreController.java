@@ -29,12 +29,12 @@ public class GroceryStoreController {
     public String showAll(Model model) {
         Iterable<GroceryStore> all = repo.findAll();
         model.addAttribute("oziqovqat",all);
-        return "/catalog/card/cards_oziqovqat";
+        return "catalog/card/cards_oziqovqat";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("oziqovqat", new GroceryStore());
-        return "/catalog/post/oziqovqat";
+        return "catalog/post/oziqovqat";
     }
 
     @PostMapping("/post")

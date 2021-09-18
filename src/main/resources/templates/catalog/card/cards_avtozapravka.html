@@ -28,8 +28,8 @@
     </div>
 
 <div th:each="item :${avtozapravka}" class="card"
-     style="width: 96vw;margin: 2vw; padding: 1vw; background-color: whitesmoke;">
-    <img style="border-radius:3px solid red;" class="card-img-top" th:src="${item.getImageUrl()}"
+     style="width: 96vw;margin: 2vw; padding: 1vw; background-color: transparent;">
+    <img  class="card-img-top" th:src="${item.getImageUrl()}"
          alt=" Card image cap">
     <div class="card-body">
         <div class="p-3 mb-2 bg-primary text-white" th:text="${item.getName()}"

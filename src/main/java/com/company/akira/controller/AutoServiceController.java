@@ -32,14 +32,14 @@ public class AutoServiceController {
     public String showAll(Model model) {
         Iterable<AutoService> all = repo.findAll();
         model.addAttribute("avtoservice",all);
-        return "/catalog/card/cards_avtoservice";
+        return "catalog/card/cards_avtoservice";
     }
 
 
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("avtoservice", new AutoService());
-        return "/catalog/post/autoservice";
+        return "catalog/post/autoservice";
     }
 
     @PostMapping("/post")

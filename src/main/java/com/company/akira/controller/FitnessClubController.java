@@ -30,12 +30,12 @@ public class FitnessClubController {
     public String showAll(Model model) {
         Iterable<FitnessClub> all = repo.findAll();
         model.addAttribute("fitnes",all);
-        return "/catalog/card/cards_trenajor";
+        return "catalog/card/cards_trenajor";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("fitnes", new FitnessClub());
-        return "/catalog/post/trenajor";
+        return "catalog/post/trenajor";
     }
 
     @PostMapping("/post")

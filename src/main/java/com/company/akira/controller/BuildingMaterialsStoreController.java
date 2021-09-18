@@ -29,12 +29,12 @@ public class BuildingMaterialsStoreController {
     public String showAll(Model model) {
         Iterable<BuildingMaterialsStore> all = repo.findAll();
         model.addAttribute("qurilish",all);
-        return "/catalog/card/cards_stroymag";
+        return "catalog/card/cards_stroymag";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("qurilish", new BuildingMaterialsStore());
-        return "/catalog/post/stroymag";
+        return "catalog/post/stroymag";
     }
 
     @PostMapping("/post")

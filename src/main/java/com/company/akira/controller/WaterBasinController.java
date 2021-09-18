@@ -32,13 +32,13 @@ public class WaterBasinController {
     public String showAll(Model model) {
         Iterable<WaterBasin> all = repo.findAll();
         model.addAttribute("basseyn", all);
-        return "/catalog/card/cards_basseyn";
+        return "catalog/card/cards_basseyn";
     }
 
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("basseyn", new WaterBasin());
-        return "/catalog/post/basseyn";
+        return "catalog/post/basseyn";
     }
 
     @PostMapping("/post")

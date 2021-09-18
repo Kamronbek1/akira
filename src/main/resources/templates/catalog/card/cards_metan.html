@@ -34,34 +34,35 @@
             </a>
         </div>
     </div>
-    <div th:each="product :${metan}" class="card"
-         style="width: 96vw;margin: 2vw; padding: 1vw; background-color: whitesmoke; ">
-        <img style="border-radius:3px solid red;" class="card-img-top" th:src="${product.getImageUrl()}"
-             alt=" Card image cap">
-        <div class="card-body">
-            <div class="p-3 mb-2 bg-primary text-white" th:text="${product.getName()}"
-                 style="margin:-10px;margin-top: 5px;"><p>Nomi</p>
-            </div>
-            <div class="p-3 mb-2 bg-primary text-white"
-                 style="margin:-10px;margin-top: 5px;">Tel:<a th:href="'tel:'+${product.getPhone()}"
-                                                              th:text="${product.getPhone()}"></a>
-            </div>
-            <div class="p-3 mb-2 bg-primary text-white" th:text="${product.getAddress()}"
-                 style="margin:-10px;margin-top: 5px;">Manzil:
-            </div>
-            <!--<div class="p-3 mb-2 bg-primary text-white" style="margin:-10px;margin-top: 5px;">Yo'nalishlar</div>
-            <div th:each="category :${product.getCategories()}">
-                <a href="#">
-                    <div class="p-3 mb-2 bg-danger text-white" style="margin:-10px;margin-top: 5px;" th:text="${category}">
-                        #
-                    </div>
-                </a>
-            </div>-->
-            <div class="dropup">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"
-                        style="width: 100%; background-color: silver;margin-top: 25px; ">
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="width: 100%; ">
+</div>
+<div th:each="product :${metan}" class="card"
+     style="width: 96vw;margin: 2vw; padding: 1vw; background-color: transparent; ">
+    <img  class="card-img-top" th:src="${product.getImageUrl()}"
+         alt=" Card image cap">
+    <div class="card-body">
+        <div class="p-3 mb-2 bg-primary text-white" th:text="${product.getName()}"
+             style="margin:-10px;margin-top: 5px;"><p>Nomi</p>
+        </div>
+        <div class="p-3 mb-2 bg-primary text-white"
+             style="margin:-10px;margin-top: 5px;">Tel:<a th:href="'tel:'+${product.getPhone()}"
+                                                          th:text="${product.getPhone()}"></a>
+        </div>
+        <div class="p-3 mb-2 bg-primary text-white" th:text="${product.getAddress()}"
+             style="margin:-10px;margin-top: 5px;">Manzil:
+        </div>
+        <!--<div class="p-3 mb-2 bg-primary text-white" style="margin:-10px;margin-top: 5px;">Yo'nalishlar</div>
+        <div th:each="category :${product.getCategories()}">
+            <a href="#">
+                <div class="p-3 mb-2 bg-danger text-white" style="margin:-10px;margin-top: 5px;" th:text="${category}">
+                    #
+                </div>
+            </a>
+        </div>-->
+        <div class="dropup">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"
+                    style="width: 100%; background-color: silver;margin-top: 25px; ">
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="width: 100%; ">
 
                     <li role="presentation">
                         <div style="position:relative;overflow:hidden; margin-left:0; width: 100%; height: 30vh;">

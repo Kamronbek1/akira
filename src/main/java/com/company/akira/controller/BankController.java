@@ -30,12 +30,12 @@ public class BankController {
     public String showAll(Model model) {
         Iterable<Bank> all = repo.findAll();
         model.addAttribute("bank", all);
-        return "/catalog/card/cards_bank";
+        return "catalog/card/cards_bank";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("bank", new Bank());
-        return "/catalog/post/bank";
+        return "catalog/post/bank";
     }
 
     @PostMapping("/post")

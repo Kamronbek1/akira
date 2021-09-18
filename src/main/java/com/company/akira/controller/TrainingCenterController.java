@@ -32,12 +32,12 @@ public class TrainingCenterController {
     public String showAll(Model model) {
         Iterable<TrainingCenter> all = repo.findAll();
         model.addAttribute("oquv",all);
-        return "/catalog/card/cards_trainingcenter";
+        return "catalog/card/cards_trainingcenter";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("oquv", new TrainingCenter());
-        return "/catalog/post/trainingcenter";
+        return "catalog/post/trainingcenter";
     }
 
     @PostMapping("/post")

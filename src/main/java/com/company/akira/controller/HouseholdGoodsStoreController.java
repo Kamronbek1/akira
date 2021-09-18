@@ -30,12 +30,12 @@ public class HouseholdGoodsStoreController {
     public String showAll(Model model) {
         Iterable<HouseholdGoodsStore> all = repo.findAll();
         model.addAttribute("xojalik",all);
-        return "/catalog/card/cards_xozmag";
+        return "catalog/card/cards_xozmag";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("xojalik", new HouseholdGoodsStore());
-        return "/catalog/post/xozmag";
+        return "catalog/post/xozmag";
     }
 
     @PostMapping("/post")

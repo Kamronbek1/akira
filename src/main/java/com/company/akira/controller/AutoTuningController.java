@@ -31,13 +31,13 @@ public class AutoTuningController {
     public String showAll(Model model) {
         Iterable<AutoTuning> all = repo.findAll();
         model.addAttribute("avtotuning", all);
-        return "/catalog/card/cards_avtotuning";
+        return "catalog/card/cards_avtotuning";
     }
 
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("tuning", new AutoTuning());
-        return "/catalog/post/autotuning";
+        return "catalog/post/autotuning";
     }
 
     @PostMapping("/post")

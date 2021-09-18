@@ -32,12 +32,12 @@ public class CallCenterOfficeController {
     public String showAll(Model model) {
         Iterable<CallCenterOffice> all = repo.findAll();
         model.addAttribute("aloqa",all);
-        return "/catalog/card/cards_svyazofis";
+        return "catalog/card/cards_svyazofis";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("aloqa", new CallCenterOffice());
-        return "/catalog/post/svyazoffice";
+        return "catalog/post/svyazoffice";
     }
 
     @PostMapping("/post")

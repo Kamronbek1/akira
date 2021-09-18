@@ -32,12 +32,12 @@ public class RefuelingController {
     public String showAll(Model model) {
         Iterable<Refueling> all = repo.findAll();
         model.addAttribute("avtozapravka",all);
-        return "/catalog/card/cards_avtozapravka";
+        return "catalog/card/cards_avtozapravka";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("avtozapravka", new Refueling());
-        return "/catalog/post/zapravka";
+        return "catalog/post/zapravka";
     }
 
     @PostMapping("/post")

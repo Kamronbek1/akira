@@ -29,12 +29,12 @@ public class SanatoriumController {
     public String showAll(Model model) {
         Iterable<Sanatorium> all = repo.findAll();
         model.addAttribute("sanatoriums",all);
-        return "/catalog/card/cards_sanatorium";
+        return "catalog/card/cards_sanatorium";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("sanatorium", new Sanatorium());
-        return "/catalog/post/sanatorium";
+        return "catalog/post/sanatorium";
     }
 
     @PostMapping("/post")

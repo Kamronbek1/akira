@@ -29,12 +29,12 @@ public class GasCylinderInstallationController {
     public String showAll(Model model) {
         Iterable<GasCylinderInstallation> all = repo.findAll();
         model.addAttribute("metan",all);
-        return "/catalog/card/cards_metan";
+        return "catalog/card/cards_metan";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("metan", new GasCylinderInstallation());
-        return "/catalog/post/metan";
+        return "catalog/post/metan";
     }
 
     @PostMapping("/post")

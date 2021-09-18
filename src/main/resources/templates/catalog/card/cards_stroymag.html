@@ -35,8 +35,8 @@
         </div>
     </div>
     <div th:each="product :${qurilish}" class="card"
-         style="width: 96vw;margin: 2vw; padding: 1vw; background-color: whitesmoke;">
-        <img style="border-radius:3px solid red;" class="card-img-top" th:src="${product.getImageUrl()}"
+         style="width: 96vw;margin: 2vw; padding: 1vw; background-color: transparent;">
+        <img  class="card-img-top" th:src="${product.getImageUrl()}"
              alt=" Card image cap">
         <div class="card-body">
             <div class="p-3 mb-2 bg-primary text-white" th:text="${product.getName()}"

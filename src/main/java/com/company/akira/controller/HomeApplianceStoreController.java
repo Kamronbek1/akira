@@ -28,12 +28,12 @@ public class HomeApplianceStoreController {
     public String showAll(Model model) {
         Iterable<HomeApplianceStore> all = repo.findAll();
         model.addAttribute("bitovoy",all);
-        return "/catalog/card/cards_maishiy";
+        return "catalog/card/cards_maishiy";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("bitovoy", new HomeApplianceStore());
-        return "/catalog/post/maishiy";
+        return "catalog/post/maishiy";
     }
 
     @PostMapping("/post")

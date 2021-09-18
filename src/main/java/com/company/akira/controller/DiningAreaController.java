@@ -1,9 +1,6 @@
 package com.company.akira.controller;
 
-import com.company.akira.model.Actor;
-import com.company.akira.model.AutoService;
 import com.company.akira.model.DiningArea;
-import com.company.akira.repository.ActorRepository;
 import com.company.akira.repository.DiningAreaRepository;
 import com.company.akira.utl.Const;
 import org.springframework.stereotype.Controller;
@@ -32,12 +29,12 @@ public class DiningAreaController {
     public String showAll(Model model) {
         Iterable<DiningArea> all = repo.findAll();
         model.addAttribute("diningarea",all);
-        return "/catalog/card/cards_stolovoy";
+        return "catalog/card/cards_stolovoy";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("diningarea", new DiningArea());
-        return "/catalog/post/stolovoy";
+        return "catalog/post/stolovoy";
     }
 
     @PostMapping("/post")
