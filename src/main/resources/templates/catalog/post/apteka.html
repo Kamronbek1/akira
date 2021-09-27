@@ -1,49 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorixona Qo`shish</title>
-    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="/static/css/add.css">
 </head>
 <body>
-<form action="/add/apteka" method="POST" target="_self">
+<form method="post" action="/catalog/apteka/post" th:object="${pharmacy}" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Dorixona Nomi:</td>
-            <td><input class="form-control" type="text" name="nomi" placeholder="Dorixona nomi." required></td>
+            <td><input class="form-control" type="text" th:field="*{name}" placeholder="Dorixona nomi."
+                       required></td>
         </tr>
 
         <tr>
             <td>Telefon:</td>
-            <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
+            <td><input class="form-control" type="tel" th:field="*{phone}"
+                       placeholder="+998 (93) 123-45-67" required></td>
         </tr>
-
         <tr>
             <td>Iframe src:</td>
-            <td><input class="form-control" type="text" name="iframesrc" placeholder="Iframe src" required></td>
+            <td><input class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
+                       required></td>
         </tr>
-
-
-        <tr>
-            <td>Rasm</td>
-            <td><input  id="image"  type="file" name="image" accept="image/png, image/jpeg"/></td>
-        </tr>
-
         <tr>
             <td>Manzil:</td>
-            <td><input class="form-control" type="text" name="manzil" placeholder="manzil" required></td>
+            <td><input class="form-control" type="text" th:field="*{address}" placeholder="manzil"
+                       required></td>
+        </tr>
+        <tr>
+            <td>Rasm</td>
+            <td><input style="width: 160%;" name="file" id="image" type="file"/></td>
         </tr>
         <tr>
             <td><input type="submit" value="Tasdiqlash">
             </td>
         </tr>
     </table>
-    <br>
-    <button onclick="window.open('/index.html','_self')">home</button>
 </form>
-
-
+<script src="/static/js/file.js"></script>
 </body>
 </html>
