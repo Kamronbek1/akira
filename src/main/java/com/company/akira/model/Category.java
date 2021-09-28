@@ -1,5 +1,6 @@
 package com.company.akira.model;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
@@ -9,6 +10,7 @@ public class Category {
     protected String address;
     protected String phone;
     protected String imageUrl;
+    @Column(length = 400)
     protected String mapUrl;
 
     public Category() {

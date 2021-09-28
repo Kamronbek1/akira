@@ -23,7 +23,9 @@
         </tr>
         <tr>
             <td>Iframe src:</td>
-            <td><input class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
+            <td><input id="srcc" type="text"></td>
+            <td><p onclick="crop()">crop</p></td>
+            <td><input id="tayy" class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
                        required></td>
         </tr>
         <tr>
@@ -42,5 +44,12 @@
     </table>
 </form>
 <script src="/static/js/file.js"></script>
+<script src="/static/js/crop.js"></script>
+<script>function crop() {
+    var qiymat = document.getElementById("srcc").value;
+    var need = qiymat.indexOff("src") + 5;
+    var need = need + 44;
+    var tayyor = qiymat.substring(need, need2);
+    document.getElementById("tayy").value = tayyor</script>
 </body>
 </html>
