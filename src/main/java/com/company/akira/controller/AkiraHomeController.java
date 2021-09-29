@@ -32,6 +32,10 @@ public class AkiraHomeController {
         userRepo.save(user);*/
         return "index";
     }
+    @GetMapping("/add")
+    public String add(){
+        return "catalog/add";
+    }
 
     /*@GetMapping("/{link}")
     public String link(@PathVariable("link") String link) {

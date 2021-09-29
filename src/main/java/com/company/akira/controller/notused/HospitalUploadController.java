@@ -51,7 +51,7 @@ public class HospitalUploadController {
         return "preview";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/add1")
     public String showForm(Model model) {
         Hospital hospital = new Hospital();
         model.addAttribute("hospital", hospital);

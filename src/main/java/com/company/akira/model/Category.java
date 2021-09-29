@@ -7,10 +7,11 @@ import javax.persistence.MappedSuperclass;
 public class Category {
 
     protected String name;
+    @Column(length = 500)
     protected String address;
     protected String phone;
     protected String imageUrl;
-    @Column(length = 400)
+    @Column(length = 500)
     protected String mapUrl;
 
     public Category() {

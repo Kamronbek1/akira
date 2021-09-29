@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Utils {
     public static <T extends Category> String downloadImage(MultipartFile file,
@@ -20,14 +23,32 @@ public class Utils {
         try {
             // Get the file and save it somewhere
             byte[] bytes = file.getBytes();
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            t.setImageUrl("/images/"+file.getOriginalFilename());
+            UUID uuid = UUID.randomUUID();
+            StringBuilder var = new StringBuilder();
+            var.append(Const.UPLOAD_PATH);
+            var.append(uuid);
+            var.append( file.getOriginalFilename());
+            Path path = Paths.get(String.valueOf(var));
+            t.setImageUrl("/images/"+uuid+file.getOriginalFilename());
             Files.write(path, bytes);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return "redirect:uploadStatus";
+    }
+
+    public static void saveImage(MultipartFile file,Category category) throws IOException {
+        byte[] bytes = file.getBytes();
+        UUID uuid = UUID.randomUUID();
+        StringBuilder var = new StringBuilder();
+        var.append(Const.UPLOAD_PATH);
+        var.append(uuid);
+        var.append( file.getOriginalFilename());
+        Path path = Paths.get(String.valueOf(var));
+        category.setImageUrl("/images/"+uuid+file.getOriginalFilename());
+         Files.write(path, bytes);
+        System.out.println("success");
     }
 }
