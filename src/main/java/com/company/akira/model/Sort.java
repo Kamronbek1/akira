@@ -14,7 +14,7 @@ public enum Sort {
 
     private String name;
 
-    private Sort(String name) {
+    Sort(String name) {
         this.name = name;
     }
     Sort() {

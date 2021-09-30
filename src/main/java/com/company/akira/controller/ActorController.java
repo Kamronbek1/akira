@@ -4,6 +4,7 @@ import com.company.akira.model.Actor;
 import com.company.akira.model.AutoTuning;
 import com.company.akira.repository.ActorRepository;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/catalog/artist")
@@ -48,7 +50,16 @@ public class ActorController {
 
         try {
             // Get the file and save it somewhere
-         Utils.saveImage(file,service);
+            byte[] bytes = file.getBytes();
+            UUID uuid = UUID.randomUUID();
+            StringBuilder var = new StringBuilder();
+            var.append(Const.UPLOAD_PATH);
+            var.append(uuid);
+            var.append(file.getOriginalFilename());
+            Path path = Paths.get(String.valueOf(var));
+            Files.write(path, bytes);
+            var.delete(0, 14);
+            actor.setImageUrl(String.valueOf(var));
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {
