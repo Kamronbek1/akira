@@ -3,6 +3,7 @@ package com.company.akira.controller;
 import com.company.akira.model.Sanatorium;
 import com.company.akira.repository.SanatoriumRepository;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -48,11 +49,7 @@ public class SanatoriumController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            service.setImageUrl("/images/" + file.getOriginalFilename());
-            Files.write(path, bytes);
+            Utils.saveImage(file,service);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

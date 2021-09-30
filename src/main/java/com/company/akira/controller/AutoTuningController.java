@@ -4,6 +4,7 @@ import com.company.akira.model.AutoTuning;
 import com.company.akira.model.Hospital;
 import com.company.akira.repository.AutoTuningRepository;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,11 +52,7 @@ public class AutoTuningController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            tuning.setImageUrl("/images/"+file.getOriginalFilename());
-            Files.write(path, bytes);
+            Utils.saveImage(file,tuning);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

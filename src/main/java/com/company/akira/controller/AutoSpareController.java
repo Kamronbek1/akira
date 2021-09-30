@@ -4,6 +4,7 @@ import com.company.akira.model.AutoService;
 import com.company.akira.model.AutoSpare;
 import com.company.akira.repository.AutoSpareRepository;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,9 +30,10 @@ public class AutoSpareController {
     @GetMapping("/all")
     public String showAll(Model model) {
         Iterable<AutoSpare> all = repo.findAll();
-        model.addAttribute("avtozapchast",all);
+        model.addAttribute("avtozapchast", all);
         return "catalog/card/cards_avtozapchast";
     }
+
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("avtozapchast", new AutoSpare());
@@ -49,11 +51,8 @@ public class AutoSpareController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
 
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            spare.setImageUrl("/images/"+file.getOriginalFilename());
-            Files.write(path, bytes);
+            Utils.saveImage(file, spare);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

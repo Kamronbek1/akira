@@ -6,6 +6,7 @@ import com.company.akira.model.BeautySalon;
 import com.company.akira.repository.ActorRepository;
 import com.company.akira.repository.BeautySalonRepository;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -51,11 +52,7 @@ public class BeautySalonController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            beautySalon.setImageUrl("/images/"+file.getOriginalFilename());
-            Files.write(path, bytes);
+            Utils.saveImage(file,beautySalon);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

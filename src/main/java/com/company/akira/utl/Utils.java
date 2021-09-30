@@ -27,9 +27,9 @@ public class Utils {
             StringBuilder var = new StringBuilder();
             var.append(Const.UPLOAD_PATH);
             var.append(uuid);
-            var.append( file.getOriginalFilename());
+            var.append(file.getOriginalFilename());
             Path path = Paths.get(String.valueOf(var));
-            t.setImageUrl("/images/"+uuid+file.getOriginalFilename());
+            t.setImageUrl("/images/" + uuid + file.getOriginalFilename());
             Files.write(path, bytes);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
@@ -39,16 +39,16 @@ public class Utils {
         return "redirect:uploadStatus";
     }
 
-    public static void saveImage(MultipartFile file,Category category) throws IOException {
+    public static void saveImage(MultipartFile file, Category category) throws IOException {
         byte[] bytes = file.getBytes();
         UUID uuid = UUID.randomUUID();
         StringBuilder var = new StringBuilder();
         var.append(Const.UPLOAD_PATH);
         var.append(uuid);
-        var.append( file.getOriginalFilename());
+        var.append(file.getOriginalFilename());
         Path path = Paths.get(String.valueOf(var));
-        category.setImageUrl("/images/"+uuid+file.getOriginalFilename());
-         Files.write(path, bytes);
-        System.out.println("success");
+        Files.write(path, bytes);
+        var.delete(0, 14);
+        category.setImageUrl(String.valueOf(var));
     }
 }

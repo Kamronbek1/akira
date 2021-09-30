@@ -3,6 +3,7 @@ package com.company.akira.controller;
 import com.company.akira.model.DiningArea;
 import com.company.akira.repository.DiningAreaRepository;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,9 +29,10 @@ public class DiningAreaController {
     @GetMapping("/all")
     public String showAll(Model model) {
         Iterable<DiningArea> all = repo.findAll();
-        model.addAttribute("diningarea",all);
+        model.addAttribute("diningarea", all);
         return "catalog/card/cards_stolovoy";
     }
+
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("diningarea", new DiningArea());
@@ -48,11 +50,7 @@ public class DiningAreaController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            service.setImageUrl("/images/" + file.getOriginalFilename());
-            Files.write(path, bytes);
+            Utils.saveImage(file, service);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

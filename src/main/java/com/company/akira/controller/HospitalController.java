@@ -11,6 +11,7 @@ import com.company.akira.model.Hospital;
 import com.company.akira.repository.HospitalRepository;
 import com.company.akira.model.Sort;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,11 +62,7 @@ public class HospitalController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            service.setImageUrl("/images/" + file.getOriginalFilename());
-            Files.write(path, bytes);
+            Utils.saveImage(file,service);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

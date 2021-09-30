@@ -3,6 +3,7 @@ package com.company.akira.controller;
 import com.company.akira.model.HomeApplianceStore;
 import com.company.akira.repository.HomeApplianceStoreRepository;
 import com.company.akira.utl.Const;
+import com.company.akira.utl.Utils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -27,9 +28,10 @@ public class HomeApplianceStoreController {
     @GetMapping("/all")
     public String showAll(Model model) {
         Iterable<HomeApplianceStore> all = repo.findAll();
-        model.addAttribute("bitovoy",all);
+        model.addAttribute("bitovoy", all);
         return "catalog/card/cards_maishiy";
     }
+
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("bitovoy", new HomeApplianceStore());
@@ -47,11 +49,7 @@ public class HomeApplianceStoreController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            service.setImageUrl("/images/" + file.getOriginalFilename());
-            Files.write(path, bytes);
+            Utils.saveImage(file, service);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

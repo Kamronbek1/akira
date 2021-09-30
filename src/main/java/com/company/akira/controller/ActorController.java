@@ -48,11 +48,7 @@ public class ActorController {
 
         try {
             // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            actor.setImageUrl("/images/"+file.getOriginalFilename());
-            Files.write(path, bytes);
+         Utils.saveImage(file,service);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
         } catch (IOException e) {

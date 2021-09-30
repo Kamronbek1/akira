@@ -51,12 +51,8 @@ public class AutoServiceController {
         }
 
         try {
-            /*// Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
+            // Get the file and save it somewhere
 
-            Path path = Paths.get(Const.UPLOAD_PATH + file.getOriginalFilename());
-            service.setImageUrl("/images/"+file.getOriginalFilename());
-            Files.write(path, bytes);*/
             Utils.saveImage(file,service);
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");

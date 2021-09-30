@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanatkor Qo`shish</title>
     <link rel="stylesheet" href="/static/css/add.css">
-
     <script src="/static/js/file.js"></script>
 </head>
 <body>
-<form action="/add/artist" method="POST" th:object="${user}" enctype="multipart/form-data">
+<form action="/catalog/artist/post" method="POST" th:object="${actor}" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Sanatkor ismi:</td>
@@ -26,7 +25,7 @@
         </tr>
         <tr>
             <td>Rasm</td>
-            <td><input type="file" accept="image/png, image/jpeg"/></td>
+            <td><input type="file" name="file" accept="image/png, image/jpeg"/></td>
         </tr>
         <tr>
             <td>
