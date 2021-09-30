@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avtotuning Qo`shish</title>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/css/add.css">
+
+    <script src="/static/js/file.js"></script>
 </head>
 <body>
 <form action="/catalog/avtotuning/post" method="POST" th:object="${tuning}" enctype="multipart/form-data">
@@ -27,11 +29,10 @@
                        required></td>
         </tr>
 
-
-            <tr>
-                  <td>Rasm nomi:</td>
-                <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
-            </tr>
+        <tr>
+            <td>Rasm</td>
+            <td><input type="file" name="file" accept="image/png, image/jpeg"/></td>
+        </tr>
 
         <tr>
             <td>Manzil:</td>
@@ -50,13 +51,6 @@
         </tr>
     </table>
 </form>
-<br>
-<button onclick="window.open('../index.html','_self')">home</button>
-
-
-         
-
-     
 
 
 </body>

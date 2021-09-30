@@ -1,67 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klinika Qo`shish</title><link rel="stylesheet" href="add.css">
+    <title>Klinika Qo`shish</title>
+    <link rel="stylesheet" href="/static/css/add.css">
+    <script src="/static/js/file.js"></script>
 </head>
 <body>
-    <form action="/add/medical"  method="POST" target="_self"   >
+<form action="/catalog/medical/post" method="POST" th:object="${hospital}" enctype="multipart/form-data">
     <table>
-    <tr>
-                <td>Muassasa Nomi:</td>
-                <td><input class="form-control" type="text" name="nomi" placeholder="Muassasa nomi..." required></td>
-            </tr>
+        <tr>
+            <td>Muassasa Nomi:</td>
+            <td><input class="form-control" type="text"  th:field="*{name}" placeholder="Muassasa nomi..."
+                       required></td>
+        </tr>
 
-            <tr>
-                <td>Telefon:</td>
-                <td><input class="form-control" type="tel" name="telefon" placeholder="+998 (93) 123-45-67" required></td>
-            </tr>
-
-       
-            <tr>
-                <td>Iframe src:</td>
-                <td><input class="form-control" type="text" name="iframesrc" placeholder="Iframe src" required></td>
-            </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td><input class="form-control" type="tel"  th:field="*{phone}"
+                       placeholder="+998 (93) 123-45-67" required></td>
+        </tr>
 
 
-
-            <tr>
-                  <td>Rasm nomi:</td>
-                <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
-            </tr>
-
-            <tr>
-                <td>Manzil:</td>
-                <td><input class="form-control" type="text" name="manzil" placeholder="manzil" required></td>
-            </tr>
-            <tr>
-                <td>Xizmat turlari:</td>
-                <td><input type="text" name="turi" id="turi" placeholder="Xizmat turlari..." class="selectedarea"   required>
-               </td>
-            </tr>
+        <tr>
+            <td>Iframe src:</td>
+            <td><input class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
+                       required></td>
+        </tr>
 
 
+        <tr>
+            <td>Rasm</td>
+            <td><input type="file" name="file" accept="image/png, image/jpeg"/></td>
+        </tr>
 
-
-                    </td>
-            </tr>
-
-            
-           
-<tr><td>            <input type="submit" value="Tasdiqlash">
-            </td></tr>
-            </table>
+        <tr>
+            <td>Manzil:</td>
+            <td><input class="form-control" type="text" th:field="*{address}" placeholder="manzil" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Xizmat turlari:</td>
+            <td><input type="text" id="turi" placeholder="Xizmat turlari..." class="selectedarea" required>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Tasdiqlash">
+            </td>
+        </tr>
+    </table>
 </form>
-<br>
-<button onclick="window.open('../index.html','_self')">home</button>
-
-
-         
-
-     
-
-
 </body>
 </html>

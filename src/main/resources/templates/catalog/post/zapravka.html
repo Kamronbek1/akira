@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avtozapravka Qo`shish</title><link rel="stylesheet" href="add.css">
+    <title>Avtozapravka Qo`shish</title>
+    <link rel="stylesheet" href="/static/css/add.css">
+
+    <script src="/static/js/file.js"></script>
 </head>
 <body>
-    <form action="/add/zapravka"  method="POST" target="_self"  >
+<form action="/catalog/avtozapravka/post" method="POST" th:object="${avtozapravka}" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Avtozapravka Nomi:</td>
@@ -29,11 +32,10 @@
         </tr>
 
 
-
-            <tr>
-                  <td>Rasm nomi:</td>
-                <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
-            </tr>
+        <tr>
+            <td>Rasm</td>
+            <td><input type="file" name="file" accept="image/png, image/jpeg"/></td>
+        </tr>
 
         <tr>
             <td>Manzil:</td>
@@ -42,7 +44,7 @@
         </tr>
         <tr>
             <td>Xizmat turlari:</td>
-            <td><input type="text" name="turi" id="turi" placeholder="xizmat turlari..." class="selectedarea" required>
+            <td><input type="text"  id="turi" placeholder="xizmat turlari..." class="selectedarea" required>
             </td>
         </tr>
         <tr>
@@ -51,8 +53,6 @@
         </tr>
     </table>
 </form>
-<br>
-<button onclick="window.open('../index.html','_self')">home</button>
 
 
 </body>

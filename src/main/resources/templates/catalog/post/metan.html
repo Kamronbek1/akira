@@ -10,7 +10,7 @@
     <script src="/static/js/file.js"></script>
 </head>
 <body>
-<form action="/catalog/metan-ustanovka/post" method="POST" th:object="${user}" enctype="multipart/form-data">
+<form action="/catalog/metan-ustanovka/post" method="POST" th:object="${metan}" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Dokon Nomi:</td>
@@ -34,7 +34,7 @@
 
         <tr>
             <td>Rasm</td>
-            <td><input type="file" name="image" accept="image/png, image/jpeg"/></td>
+            <td><input type="file" name="file" accept="image/png, image/jpeg"/></td>
         </tr>
 
         <tr>

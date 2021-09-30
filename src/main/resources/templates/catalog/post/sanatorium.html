@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ovqatlanish joylari Qo`shish</title>
+    <title>Sanatoriya Qo`shish</title>
     <link rel="stylesheet" href="/static/css/add.css">
 
     <script src="/static/js/file.js"></script>
 </head>
 <body>
-<form action="/catalog/oshxonalar/post" method="POST" th:object="${diningarea}" enctype="multipart/form-data">
+<form action="/catalog/sanatorium/post" method="POST" th:object="${sanatorium}" enctype="multipart/form-data">
     <table>
         <tr>
-            <td>Joy Nomi:</td>
-            <td><input class="form-control" type="text"  th:field="*{name}" placeholder="Joy nomi..."
+            <td>Sanatoriya Nomi:</td>
+            <td><input class="form-control" type="text"  th:field="*{name}" placeholder="Sanatoriya nomi..."
                        required></td>
         </tr>
 
@@ -24,14 +25,11 @@
                        placeholder="+998 (93) 123-45-67" required></td>
         </tr>
 
-
         <tr>
             <td>Iframe src:</td>
             <td><input class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
                        required></td>
         </tr>
-
-
         <tr>
             <td>Rasm</td>
             <td><input type="file" name="file" accept="image/png, image/jpeg"/></td>
@@ -43,8 +41,13 @@
             </td>
         </tr>
         <tr>
-            <td>Taom turlari:</td>
-            <td><input type="text" id="turi" placeholder="Taom turlari..." class="selectedarea" required>
+            <td>Sanatoriya turlari:</td>
+            <td><input type="text" id="turi" placeholder="xizmat turlari..." class="selectedarea" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Sanatoriya narxlari:</td>
+            <td><input type="text"  placeholder="narx..." class="selectedarea" required>
             </td>
         </tr>
         <tr>

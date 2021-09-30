@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avtosalon Qo`shish</title><link rel="stylesheet" href="add.css">
+    <title>Avtosalon Qo`shish</title>
+    <link rel="stylesheet" href="/static/css/add.css">
+
+    <script src="/static/js/file.js"></script>
 </head>
 <body>
-    <form action="/add/autosalon"  method="POST" target="_self"   >
+<form action="/catalog/avtosalon/post" method="POST" th:object="${avtosalon}" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Avtosalon Nomi:</td>
@@ -28,11 +31,10 @@
         </tr>
 
 
-
-            <tr>
-                  <td>Rasm nomi:</td>
-                <td><input class="form-control" type="text" name="rasmnomi" placeholder="Rasm nomini yozing" required></td>
-            </tr>
+        <tr>
+            <td>Rasm</td>
+            <td><input type="file" name="file" accept="image/png, image/jpeg"/></td>
+        </tr>
 
         <tr>
             <td>Manzil:</td>
@@ -56,22 +58,16 @@
                         <label><input type="checkbox" name="brands[]" value="Cobalt"> Cobalt</label>
 
 
-                        </div>
-                   
-                      </form></td>
-            </tr>
+                    </div>
 
-            
-           
-<tr><td>            <input type="submit" value="Tasdiqlash">
-            </td></tr>
-            </table>
+                </form>-->
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Tasdiqlash">
+            </td>
+        </tr>
+    </table>
 </form>
-<br>
-<button onclick="window.open('../index.html','_self')">home</button>
-
-
-                       
-
 </body>
 </html>
