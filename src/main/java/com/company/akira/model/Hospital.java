@@ -12,7 +12,7 @@ import java.util.Set;
  * @author User
  */
 @Entity
-public class Hospital extends Category {
+public class Hospital extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hos_gen")
     @SequenceGenerator(name = "hos_gen", sequenceName = "hos_seq", allocationSize = 1)

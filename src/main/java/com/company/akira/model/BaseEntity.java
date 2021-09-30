@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class Category {
+public class BaseEntity {
 
     protected String name;
     @Column(length = 500)
@@ -14,10 +14,10 @@ public class Category {
     @Column(length = 500)
     protected String mapUrl;
 
-    public Category() {
+    public BaseEntity() {
     }
 
-    public Category(String name, String address, String phone, String imageUrl, String mapUrl) {
+    public BaseEntity(String name, String address, String phone, String imageUrl, String mapUrl) {
         this.name = name;
         this.address = address;
         this.phone = phone;

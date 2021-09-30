@@ -3,7 +3,7 @@ package com.company.akira.model;
 import javax.persistence.*;
 
 @Entity
-public class GasCylinderInstallation extends Category {
+public class GasCylinderInstallation extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gci_gen")

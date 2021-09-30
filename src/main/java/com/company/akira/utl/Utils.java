@@ -1,6 +1,6 @@
 package com.company.akira.utl;
 
-import com.company.akira.model.Category;
+import com.company.akira.model.BaseEntity;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -9,12 +9,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Utils {
-    public static <T extends Category> String downloadImage(MultipartFile file,
-                                                            RedirectAttributes redirectAttributes, T t) {
+    public static <T extends BaseEntity> String downloadImage(MultipartFile file,
+                                                              RedirectAttributes redirectAttributes, T t) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";
@@ -39,7 +37,7 @@ public class Utils {
         return "redirect:uploadStatus";
     }
 
-    public static void saveImage(MultipartFile file, Category category) throws IOException {
+    public static void saveImage(MultipartFile file, BaseEntity baseEntity) throws IOException {
         byte[] bytes = file.getBytes();
         UUID uuid = UUID.randomUUID();
         StringBuilder var = new StringBuilder();
@@ -49,6 +47,6 @@ public class Utils {
         Path path = Paths.get(String.valueOf(var));
         Files.write(path, bytes);
         var.delete(0, 14);
-        category.setImageUrl(String.valueOf(var));
+        baseEntity.setImageUrl(String.valueOf(var));
     }
 }

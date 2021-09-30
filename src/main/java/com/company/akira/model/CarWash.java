@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class CarWash extends Category {
+public class CarWash extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "carwash_gen")
     @SequenceGenerator(name = "carwash_gen", sequenceName = "carwash_seq", allocationSize = 1)

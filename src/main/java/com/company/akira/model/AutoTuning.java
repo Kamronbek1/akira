@@ -3,7 +3,7 @@ package com.company.akira.model;
 import javax.persistence.*;
 
 @Entity
-public class AutoTuning extends Category {
+public class AutoTuning extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tuning_gen")
     @SequenceGenerator(name = "tuning_gen", sequenceName = "tuning_seq", allocationSize = 1)

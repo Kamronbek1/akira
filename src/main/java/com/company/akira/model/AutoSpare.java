@@ -3,7 +3,7 @@ package com.company.akira.model;
 import javax.persistence.*;
 
 @Entity
-public class AutoSpare extends Category {
+public class AutoSpare extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "spare_gen")
     @SequenceGenerator(name = "spare_gen", sequenceName = "spare_seq", allocationSize = 1)

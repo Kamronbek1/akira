@@ -3,7 +3,7 @@ package com.company.akira.model;
 import javax.persistence.*;
 
 @Entity
-public class JewelryStore extends Category {
+public class JewelryStore extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "jewelrys_gen")
     @SequenceGenerator(name = "jewelrys_gen", sequenceName = "jewelrys_seq", allocationSize = 1)

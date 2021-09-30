@@ -3,7 +3,7 @@ package com.company.akira.model;
 import javax.persistence.*;
 
 @Entity
-public class AutoService extends Category {
+public class AutoService extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "as_gen")
     @SequenceGenerator(name = "as_gen", sequenceName = "as_seq", allocationSize = 1)
