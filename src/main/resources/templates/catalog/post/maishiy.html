@@ -24,7 +24,7 @@
 
         <tr>
             <td>Iframe src:</td>
-            <td><input class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
+            <td><input id="map_url" class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
                        required></td>
         </tr>
 
@@ -42,7 +42,7 @@
         <tr>
             <td>Maxsulot turlari:</td>
             <td><input type="text" id="turi" placeholder="Maxsulot turlari..." class="selectedarea"
-                       required>
+                       required minlength="1" maxlength="255">
             </td>
         </tr>
         <tr>
@@ -51,5 +51,6 @@
         </tr>
     </table>
 </form>
+<script src="/static/js/crop.js"></script>
 </body>
 </html>
