@@ -12,8 +12,8 @@
     <table>
         <tr>
             <td>Dorixona Nomi:</td>
-            <td><input class="form-control" type="text" th:field="*{name}" placeholder="Dorixona nomi."
-                       required></td>
+            <td><input class="form-control" type="text" th:field="*{name}" placeholder="Dorixona nomi"
+                       required  minlength="1" maxlength="255"></td>
         </tr>
 
         <tr>
@@ -23,15 +23,13 @@
         </tr>
         <tr>
             <td>Iframe src:</td>
-            <td><input id="srcc" type="text"></td>
-            <td><p onclick="crop()">crop</p></td>
-            <td><input id="tayy" class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
+            <td><input id="map_url" class="form-control" type="text" th:field="*{mapUrl}" placeholder="Iframe src"
                        required></td>
         </tr>
         <tr>
             <td>Manzil:</td>
             <td><input class="form-control" type="text" th:field="*{address}" placeholder="manzil"
-                       required></td>
+                       required minlength="1" maxlength="500"></td>
         </tr>
         <tr>
             <td>Rasm</td>
@@ -45,11 +43,6 @@
 </form>
 <script src="/static/js/file.js"></script>
 <script src="/static/js/crop.js"></script>
-<script>function crop() {
-    var qiymat = document.getElementById("srcc").value;
-    var need = qiymat.indexOff("src") + 5;
-    var need = need + 44;
-    var tayyor = qiymat.substring(need, need2);
-    document.getElementById("tayy").value = tayyor</script>
+
 </body>
 </html>
