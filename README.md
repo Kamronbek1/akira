@@ -1,2 +1,2 @@
 # akira
-this is shopping project using spring boot
+this is demo rest api project using spring boot and thymeleaf
